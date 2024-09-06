@@ -1,0 +1,78 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.container {
+  @include container();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  background-color: black;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-bottom-left-radius: $radius_s_d;
+  border-bottom-right-radius: $radius_s_d;
+  @include mobile {
+    flex-direction: column;
+    border-bottom-left-radius: $radius_s_m;
+    border-bottom-right-radius: $radius_s_m;
+  }
+}
+.img {
+  height: 391px;
+  border-radius: $radius_c_d;
+  @include mobile {
+    width: 100%;
+    height: 446px;
+    border-radius: $radius_c_m;
+  }
+}
+.content {
+  width: 100%;
+  height: 389px;
+  padding: 40px;
+  border-radius: $radius_c_d;
+  background-color: $gray_75;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mobile {
+    height: 490px;
+    border-radius: $radius_c_m;
+  }
+}
+.title {
+  color: $gray_15;
+  h2 {
+    font-weight: bold;
+    font-size: 62px;
+    @include mobile {
+      text-wrap: nowrap;
+      font-size: 42px;
+    }
+  }
+  p {
+    font-size: 16px;
+    margin-top: 20px;
+    @include mobile {
+      line-height: 32px;
+    }
+  }
+}
+.date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mobile {
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+}
+.loc {
+  color: $gray_15;
+  div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+}

@@ -15,14 +15,21 @@ $bg: rgba(255, 255, 255, 0.3);
   color: $gray_15;
   background-color: $bg;
   @include center();
+  @include mobile {
+    height: 90px;
+    width: 90px;
+  }
 }
+
 .dailyCounter {
   width: 376px;
   height: 112px;
-  margin-top: 40px;
-  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  @include mobile {
+    width: 320px;
+    height: 90px;
+  }
 }
 
 .progress {

@@ -14,7 +14,9 @@ const Hero: React.FC = () => {
           Join top teams and fans from around the world for a high-energy,
           action-packed tournament.
         </p>
-        <DailyCounter />
+        <div className={styles.counter}>
+          <DailyCounter />
+        </div>
         <ButtonRegister />
       </div>
     </VideoPlayer>
