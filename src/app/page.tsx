@@ -1,5 +1,6 @@
 import About from "./components/sections/about/About";
 import Final from "./components/sections/final/Final";
+import Footer from "./components/sections/footer/Footer";
 import Hero from "./components/sections/hero/Hero";
 import Location from "./components/sections/location/Location";
 import Place from "./components/sections/place/Place";
@@ -16,6 +17,7 @@ export default function Home() {
       <Location />
       <Teams />
       <Final />
+      <Footer />
     </>
   );
 }

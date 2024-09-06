@@ -1,0 +1,76 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.footer {
+  @include container();
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  @include mobile {
+    flex-direction: column;
+    align-items: start;
+  }
+  ul {
+    width: 550px;
+    list-style: none;
+    color: $gray_15;
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+    }
+    li {
+      padding-top: 20px;
+    }
+  }
+}
+
+.brand {
+  width: 202px;
+  height: 51px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  @include mobile {
+    width: 30px;
+    align-items: end;
+  }
+  .img {
+    width: 56px;
+    @include mobile {
+      width: 31px;
+      height: 28px;
+    }
+  }
+  p {
+    color: $gray_15;
+    width: 138px;
+    font-weight: 700;
+    font-size: 26px;
+    text-wrap: nowrap;
+    letter-spacing: -0.03em;
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+}
+.support {
+  color: $gray_45;
+  div {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+}
+.copy {
+  @include container();
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: $gray_15;
+}

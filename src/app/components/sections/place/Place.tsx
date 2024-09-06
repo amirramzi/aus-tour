@@ -38,7 +38,7 @@ const Place: React.FC = () => {
           <div key={index} className={styles.card}>
             <div className={styles.radial}></div>
             <h5>{item.title}</h5>
-            <Image className={styles.img} src={item.img} alt="" />
+            <Image className={styles.img} src={item.img} alt="" width={100} />
             <p>{item.p}</p>
           </div>
         ))}

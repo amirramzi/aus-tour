@@ -4,7 +4,7 @@ import React from "react";
 const Calendar = () => {
   return (
     <svg
-      style={{ marginRight: "10px", color: "" }}
+      style={{ marginRight: "10px"}}
       width="24"
       height="24"
       viewBox="0 0 24 24"

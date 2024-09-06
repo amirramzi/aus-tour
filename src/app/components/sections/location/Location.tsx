@@ -5,7 +5,7 @@ import Calendar from "../../icon/Calendar";
 import AustriaMap from "../../icon/AustriaMap";
 
 const Location: React.FC = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState<number | null>(0);
 
   const clickHandler = (index: number) => {
     setActiveCard(index);

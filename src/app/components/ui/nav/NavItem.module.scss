@@ -1,5 +1,6 @@
 @import "../../../../sass/variable";
 @import "../../../../sass/mixin";
+
 .desktop {
   gap: 40px;
   list-style: none;
@@ -8,6 +9,7 @@
     display: none;
   }
 }
+
 .navItem {
   font-weight: 400;
   size: 16px;
@@ -16,9 +18,68 @@
     color: $gray_15;
   }
 }
+
+.mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
 .burgerIcon {
   display: none;
   @include mobile {
     display: block;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+  background-color: $opacity_b_40;
+}
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 218px !important;
+  background-color: $gray_75;
+  border-top-left-radius: $radius_s_m;
+  border-top-right-radius: $radius_s_m;
+  transition: transform 0.3s ease;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.menuList {
+  list-style: none;
+  padding: 20px;
+  text-align: center;
+
+  li {
+    padding-top: 10px;
+    margin: 15px 0;
+    font-weight: 400;
+    size: 16px;
+    color: #969696;
+    &:first-child {
+      color: $gray_15;
+    }
   }
 }
