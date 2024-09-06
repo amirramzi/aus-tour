@@ -4,7 +4,7 @@ import Nav from "../../ui/nav/Nav";
 import ButtonRegister from "../../ui/button/ButtonRegister";
 import DailyCounter from "../../ui/daily-counter/DailyCounter";
 import styles from "./Hero.module.scss";
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <VideoPlayer>
       <Nav />

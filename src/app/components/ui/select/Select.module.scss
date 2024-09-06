@@ -1,0 +1,68 @@
+@import "../../../../sass/variable";
+
+@import "../../../../sass/variable";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 250px;
+
+  label {
+    font-size: 14px;
+    color: $gray_30;
+    margin-bottom: 8px;
+  }
+
+  .selectBox {
+    text-wrap: nowrap;
+    padding: 15px 20px;
+    font-size: 14px;
+    background-color: $gray_75;
+    color: $gray_15;
+    border-radius: 32px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .optionsList {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    background-color: $gray_75;
+    border-radius: 24px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .option {
+    padding: 15px 20px;
+    font-size: 14px;
+    border-radius: 32px;
+    cursor: pointer;
+    color: $gray_15;
+    background-color: $gray_75;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: lighten($gray_75, 10%);
+      padding: 15px 20px;
+    }
+
+    &.selected {
+      background-color: $opacity_w_15; // Adjust to your primary color
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

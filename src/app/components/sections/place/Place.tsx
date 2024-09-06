@@ -4,7 +4,8 @@ import Tickets from "/public/svg/Tickets.svg";
 import Frame from "../../../../../public/svg/Frame.svg";
 import Frame29 from "/public/svg/Frame29.svg";
 import Image from "next/image";
-const Place = () => {
+
+const Place: React.FC = () => {
   const cardItem: {
     title: string;
     img: any;

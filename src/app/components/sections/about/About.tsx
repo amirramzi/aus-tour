@@ -7,7 +7,7 @@ import Ball from "../../icon/Ball";
 import Location from "../../icon/Location";
 import Time from "../../icon/Time";
 import Euro from "../../icon/Euro";
-const About = () => {
+const About: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.about}>
