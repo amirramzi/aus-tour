@@ -1,11 +1,15 @@
-import ButtonRegister from "./components/ui/button/ButtonRegister";
-import Nav from "./components/ui/nav/Nav";
+import About from "./components/sections/about/About";
+import Hero from "./components/sections/hero/Hero";
+import Place from "./components/sections/place/Place";
+
 import styles from "./page.module.scss";
 
 export default function Home() {
   return (
     <>
-      <Nav />
+      <Hero />
+      <Place />
+      <About />
     </>
   );
 }

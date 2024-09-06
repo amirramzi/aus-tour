@@ -1,0 +1,31 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.title {
+  font-weight: 700;
+  font-size: 104px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: $gray_15;
+  @include mobile {
+    font-size: 46px;
+    line-height: 51px;
+  }
+}
+.description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  color: $gray_15;
+  @include mobile {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}

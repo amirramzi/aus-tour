@@ -1,3 +1,4 @@
+@import "./variable";
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
@@ -11,4 +12,17 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+@mixin radiusCard {
+  border-radius: $radius_c_d;
+  @include mobile {
+    border-radius: $radius_c_m;
+  }
+}
+@mixin radial {
+  background: radial-gradient(
+    circle 100px,
+    rgba(165, 70, 1, 0.3) 20%,
+    rgba(25, 199, 168, 0.01) 30%
+  );
 }

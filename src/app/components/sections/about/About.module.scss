@@ -1,0 +1,90 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+
+.container {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $radius_s_d;
+  padding-bottom: $radius_s_d;
+  @include mobile {
+    padding-top: $radius_s_m;
+    padding-bottom: $radius_s_m;
+  }
+}
+.about {
+  @include radiusCard();
+  padding: 40px;
+  color: $gray_15;
+  background-color: $gray_60;
+  @include mobile {
+    padding: 20px;
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    @include mobile {
+      font-size: 35px;
+    }
+  }
+  p {
+    font-size: 16px;
+    line-height: 38px;
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+  @include mobile {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+}
+.img {
+  width: 782px;
+  @include mobile {
+    width: auto;
+    height: 188px;
+  }
+}
+.overview {
+  @include radiusCard();
+  width: 410px;
+  height: 448px;
+  padding: 40px;
+  background-color: $gray_60;
+  color: $gray_15;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  @include mobile {
+    width: auto;
+    margin-top: 40px;
+    height: 291px;
+    padding: 20px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 30px;
+  }
+  ul {
+    height: 188px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include mobile {
+      height: 128px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

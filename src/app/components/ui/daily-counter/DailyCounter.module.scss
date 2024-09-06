@@ -1,0 +1,57 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+$bg: rgba(255, 255, 255, 0.3);
+@mixin center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin progress {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  border: 3px solid $gray_15;
+  color: $gray_15;
+  background-color: $bg;
+  @include center();
+}
+.dailyCounter {
+  width: 376px;
+  height: 112px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress {
+  @include progress();
+  transform: rotate(-45deg);
+}
+.progress:nth-child(2) {
+  @include progress();
+  border-right: 2px solid $bg;
+  transform: rotate(-45deg);
+}
+.progress:last-child {
+  @include progress();
+  border-right: 2px solid $bg;
+  transform: rotate(-45deg);
+}
+.circle {
+  @include center();
+  transform: rotate(45deg);
+  padding: 16px, 8px, 8px, 8px;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 40px;
+  color: $gray_15;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+}
