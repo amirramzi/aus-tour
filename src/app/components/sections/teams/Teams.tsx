@@ -21,32 +21,34 @@ const Teams: React.FC = () => {
     { img: logo2 },
   ];
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>
-        <div>
-          <h3>Registered Teams</h3>
-          <p>
-            Check out the teams that have already signed up to compete in the
-            Austria Tour.
-          </p>
-        </div>
-        <div>
-          <Select />
-        </div>
-      </div>
-      <div className={styles.teamWrapper}>
-        {team.map((item, index) => (
-          <div key={index} className={styles.teamCard}>
-            <Image src={item.img} alt="team logo" />
-            <span>Team Very Long Name</span>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.title}>
+          <div>
+            <h3>Registered Teams</h3>
+            <p>
+              Check out the teams that have already signed up to compete in the
+              Austria Tour.
+            </p>
           </div>
-        ))}
-        {team.map((item, index) => (
-          <div key={index} className={styles.teamCard}>
-            <Image src={item.img} alt="team logo" />
-            <span>Team Very Long Name</span>
+          <div>
+            <Select />
           </div>
-        ))}
+        </div>
+        <div className={styles.teamWrapper}>
+          {team.map((item, index) => (
+            <div key={index} className={styles.teamCard}>
+              <Image src={item.img} alt="team logo" />
+              <span>Team Very Long Name</span>
+            </div>
+          ))}
+          {team.map((item, index) => (
+            <div key={index} className={styles.teamCard}>
+              <Image src={item.img} alt="team logo" />
+              <span>Team Very Long Name</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

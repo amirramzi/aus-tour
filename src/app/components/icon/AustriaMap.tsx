@@ -1,9 +1,10 @@
 "use client";
 interface AustriaMapProps {
   className?: string;
+  activeLoc?: number | null;
 }
 
-const AustriaMap: React.FC<AustriaMapProps> = ({ className }) => {
+const AustriaMap: React.FC<AustriaMapProps> = ({ className, activeLoc }) => {
   return (
     <svg
       className={className}
@@ -110,87 +111,105 @@ const AustriaMap: React.FC<AustriaMapProps> = ({ className }) => {
         fill="#363636"
       />
       <circle cx="589.258" cy="242.054" r="4.28036" fill="#F8F8F8" />
+
       <circle
         cx="589.258"
         cy="242.054"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 0 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 0 ? "1" : "0.15"}
       />
+      <circle cx="589.258" cy="242.054" r="4.28036" fill="#F8F8F8" />
       <circle cx="623.287" cy="280.578" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="623.287"
         cy="280.578"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 1 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 1 ? "1" : "0.15"}
       />
+      <circle cx="623.287" cy="280.578" r="4.28036" fill="#F8F8F8" />
       <circle cx="751.056" cy="119.422" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="751.056"
         cy="119.422"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 2 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 2 ? "1" : "0.15"}
       />
+      <circle cx="751.056" cy="119.422" r="4.28036" fill="#F8F8F8" />
       <circle cx="673.367" cy="139.326" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="673.368"
         cy="139.326"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 3 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 3 ? "1" : "0.15"}
       />
+      <circle cx="673.368" cy="139.326" r="4.28036" fill="#F8F8F8" />
       <circle cx="36.4494" cy="259.39" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="36.4495"
         cy="259.39"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 4 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 4 ? "1" : "0.15"}
       />
+      <circle cx="36.4495" cy="259.39" r="4.28036" fill="#F8F8F8" />
       <circle cx="190.542" cy="275.441" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="190.543"
         cy="275.442"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 5 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 5 ? "1" : "0.15"}
       />
+      <circle cx="190.543" cy="275.442" r="4.28036" fill="#F8F8F8" />
       <circle cx="459.563" cy="134.189" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="459.563"
         cy="134.189"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 6 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 6 ? "1" : "0.15"}
       />
-      <circle cx="491.666" cy="132.263" r="12.8411" fill="#A50104" />
+      <circle cx="459.563" cy="134.189" r="4.28036" fill="#F8F8F8" />
+      <circle
+        cx="491.666"
+        cy="132.263"
+        r="12.8411"
+        fill={activeLoc == 7 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 7 ? "1" : "0.15"}
+      />
       <circle cx="491.666" cy="132.263" r="4.28036" fill="#F8F8F8" />
+
       <circle cx="465.984" cy="155.377" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="465.984"
         cy="155.377"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 8 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 8 ? "1" : "0.15"}
       />
+      <circle cx="465.984" cy="155.377" r="4.28036" fill="#F8F8F8" />
       <circle cx="510.928" cy="337.079" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="510.928"
         cy="337.079"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 9 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 9 ? "1" : "0.15"}
       />
+      <circle cx="510.928" cy="337.079" r="4.28036" fill="#F8F8F8" />
       <circle cx="491.666" cy="365.971" r="4.28036" fill="#F8F8F8" />
       <circle
         cx="491.666"
         cy="365.971"
         r="12.8411"
-        fill="white"
-        fillOpacity="0.15"
+        fill={activeLoc == 10 ? "#A50104" : "white"}
+        fillOpacity={activeLoc == 10 ? "1" : "0.15"}
       />
+      <circle cx="491.666" cy="365.971" r="4.28036" fill="#F8F8F8" />
     </svg>
   );
 };

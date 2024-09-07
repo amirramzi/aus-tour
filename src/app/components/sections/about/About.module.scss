@@ -1,6 +1,8 @@
 @import "../../../../sass/variable";
 @import "../../../../sass/mixin";
-
+.cont {
+  @include centerWrapper();
+}
 .container {
   @include container();
   display: flex;

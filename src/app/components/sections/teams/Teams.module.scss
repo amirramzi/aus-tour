@@ -1,8 +1,12 @@
 @import "../../../../sass/variable";
 @import "../../../../sass/mixin";
+.wrapper {
+  background-color: $bg_dark;
+  @include centerWrapper();
+}
 .container {
   @include container();
-  background-color: black;
+  background-color: $bg_dark;
   color: $gray_15;
   padding-top: 80px;
   @include mobile {

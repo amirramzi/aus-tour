@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: $bg_dark;
   padding-top: 100px;
   padding-bottom: 50px;
   border-bottom-left-radius: 80px;
@@ -57,13 +57,17 @@
   align-items: center;
   justify-content: space-evenly;
   position: relative;
+  overflow: hidden;
+
   .radial {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100px;
-    height: 100px;
-    @include radial();
+    &:first-child {
+      position: absolute;
+      right: -100px;
+      top: -80px;
+      width: 400px;
+      height: 400px;
+      @include radial();
+    }
   }
   h5 {
     font-weight: bold;

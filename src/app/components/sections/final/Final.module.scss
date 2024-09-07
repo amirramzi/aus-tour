@@ -1,20 +1,26 @@
 @import "../../../../sass/variable";
 @import "../../../../sass/mixin";
+.wrapper {
+  @include centerWrapper();
+  background-color: $bg_dark;
+  border-bottom-left-radius: $radius_s_d;
+  border-bottom-right-radius: $radius_s_d;
+  @include mobile {
+    border-bottom-left-radius: $radius_s_m;
+    border-bottom-right-radius: $radius_s_m;
+  }
+}
 .container {
   @include container();
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  background-color: black;
+  background-color: $bg_dark;
   padding-top: 80px;
   padding-bottom: 80px;
-  border-bottom-left-radius: $radius_s_d;
-  border-bottom-right-radius: $radius_s_d;
   @include mobile {
     flex-direction: column;
-    border-bottom-left-radius: $radius_s_m;
-    border-bottom-right-radius: $radius_s_m;
   }
 }
 .img {

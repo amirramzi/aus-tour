@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
 
       if (nav) {
         const offset = window.scrollY;
-        if (offset > 0) {
+        if (offset > 700) {
           setScrolled(true);
         } else {
           setScrolled(false);
@@ -30,13 +30,17 @@ const Nav: React.FC = () => {
   }, []);
 
   return (
-    <nav className={styles.nav}>
-      <div className={`${styles.container} ${scrolled ? styles.scrolled : ""}`}>
-        <div className={`${styles.brand} ${scrolled ? styles.branS : ""}`}>
-          <Image className={styles.img} src={Logo} alt="AUSTRIA TOUR LOGO" />
-          <p>AUSTRIA TOUR</p>
+    <nav className={styles.wrapper}>
+      <div className={styles.nav}>
+        <div
+          className={`${styles.container} ${scrolled ? styles.scrolled : ""}`}
+        >
+          <div className={`${styles.brand} ${scrolled ? styles.branS : ""}`}>
+            <Image className={styles.img} src={Logo} alt="AUSTRIA TOUR LOGO" />
+            <p>AUSTRIA TOUR</p>
+          </div>
+          <NavItem />
         </div>
-        <NavItem />
       </div>
     </nav>
   );

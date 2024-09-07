@@ -5,13 +5,17 @@
   }
 }
 @mixin container {
-  padding-left: 104px;
-  padding-right: 104px;
-
+  width: 100%;
+  max-width: 1232px;
   @include mobile {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+@mixin centerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @mixin radiusCard {
   border-radius: $radius_c_d;
@@ -21,8 +25,8 @@
 }
 @mixin radial {
   background: radial-gradient(
-    circle 100px,
-    rgba(165, 70, 1, 0.3) 20%,
-    rgba(25, 199, 168, 0.01) 30%
+    50% 50% at 50% 50%,
+    rgba(165, 70, 1, 0.3) 0%,
+    rgba(25, 199, 168, 0) 100%
   );
 }

@@ -6,9 +6,10 @@ import AustriaMap from "../../icon/AustriaMap";
 
 const Location: React.FC = () => {
   const [activeCard, setActiveCard] = useState<number | null>(0);
-
+  const [activeLoc, setActiveLoc] = useState<number | null>(0);
   const clickHandler = (index: number) => {
     setActiveCard(index);
+    setActiveLoc(index);
   };
 
   const LocCard: { name: string }[] = [
@@ -33,6 +34,7 @@ const Location: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <h3>Dates & Locations</h3>
+
       <div className={styles.cardWrapper}>
         {LocCard.map((item, index) => (
           <div
@@ -52,7 +54,8 @@ const Location: React.FC = () => {
           </div>
         ))}
       </div>
-      <AustriaMap className={styles.map} />
+
+      <AustriaMap className={styles.map} activeLoc={activeLoc} />
     </div>
   );
 };

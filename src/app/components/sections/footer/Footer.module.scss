@@ -1,5 +1,8 @@
 @import "../../../../sass/variable";
 @import "../../../../sass/mixin";
+.wrapper {
+  @include centerWrapper();
+}
 .footer {
   @include container();
   padding-top: 40px;
@@ -66,11 +69,18 @@
   }
 }
 .copy {
-  @include container();
-  width: 100%;
-  height: 40px;
+  @include centerWrapper();
+
+  background-color: $bg_dark;
   display: flex;
   align-items: center;
-  background-color: black;
+  justify-content: space-between;
   color: $gray_15;
+  padding-top: 20px;
+  span {
+    @include container();
+    background-color: $bg_dark;
+    width: 100%;
+    height: 40px;
+  }
 }
