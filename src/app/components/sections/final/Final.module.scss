@@ -46,6 +46,7 @@
   @include mobile {
     height: 490px;
     border-radius: $radius_c_m;
+    padding: 16px;
   }
 }
 .title {

@@ -25,7 +25,7 @@
   overflow: hidden;
   margin-bottom: -40px;
   @include mobile {
-    padding: 20px;
+    padding: 16px;
     margin-bottom: 0;
   }
   h2 {
@@ -76,14 +76,19 @@
   position: relative;
   overflow: hidden;
   @include mobile {
+    height: 291px;
     width: auto;
     margin-top: 40px;
     height: 291px;
-    padding: 20px;
+    padding: 16px;
   }
   h3 {
     font-weight: bold;
     font-size: 40px;
+    text-wrap: nowrap;
+    @include mobile {
+      font-size: 28px;
+    }
   }
   ul {
     height: 188px;

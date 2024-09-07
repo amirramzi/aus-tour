@@ -6,6 +6,7 @@ import Calendar from "../../icon/Calendar";
 import Location from "../../icon/Location";
 import DailyCounter from "../../ui/daily-counter/DailyCounter";
 import { antonio, inter } from "@/app/fonts";
+import Timer from "../../ui/daily-counter/Timer";
 const Final: React.FC = () => {
   return (
     <div className={styles.wrapper}>
@@ -24,14 +25,15 @@ const Final: React.FC = () => {
           <div className={styles.date}>
             <div className={styles.loc}>
               <div>
-                <Calendar /> <span> January 13, 2024 </span>
+                <Calendar />
+                <span> January 13, 2024 </span>
               </div>
               <div>
                 <Location />
                 <span>Sportzentrum Niederösterreich, St. Pölten</span>
               </div>
             </div>
-            <DailyCounter />
+            <Timer />
           </div>
         </div>
       </div>

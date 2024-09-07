@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
 
       if (nav) {
         const offset = window.scrollY;
-        if (offset > 100) {
+        if (offset > 700) {
           setScrolled(true);
         } else {
           setScrolled(false);

@@ -61,6 +61,11 @@
   justify-content: space-evenly;
   position: relative;
   overflow: hidden;
+  @include mobile {
+    width: 328px;
+    height: 273px;
+    padding: 24px;
+  }
   .radialTopRight {
     @include radialTopRight();
   }
@@ -79,8 +84,10 @@
     height: 126px;
   }
   p {
-    width: 304px;
+    width: 270px;
+    font-size: 16px;
     text-align: center;
+    line-height: 38px;
   }
 }
 
