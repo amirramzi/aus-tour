@@ -13,8 +13,8 @@ $bg: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border: 3px solid $gray_15;
   color: $gray_15;
-  background-color: $bg;
-  backdrop-filter: blur(20px);
+  background-color: $opacity_w_15;
+
   @include center();
   @include mobile {
     height: 90px;

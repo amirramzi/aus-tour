@@ -38,19 +38,22 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-
+  &:first-child {
+    @include radialTopRight();
+  }
   @include mobile {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
+
 .card {
   @include radiusCard();
   width: 382px;
   height: 372px;
   margin-top: 30px;
-  background-color: $gray_75;
+  background-color: $opacity_w_06;
   color: $gray_15;
   display: flex;
   flex-direction: column;
@@ -58,16 +61,14 @@
   justify-content: space-evenly;
   position: relative;
   overflow: hidden;
-
-  .radial {
-    &:first-child {
-      position: absolute;
-      right: -100px;
-      top: -80px;
-      width: 400px;
-      height: 400px;
-      @include radial();
-    }
+  .radialTopRight {
+    @include radialTopRight();
+  }
+  .radialBottomLeft {
+    @include radialBottomLeft();
+  }
+  .radialLeft {
+    @include radialLeft();
   }
   h5 {
     font-weight: bold;
@@ -82,6 +83,7 @@
     text-align: center;
   }
 }
+
 .note {
   text-align: center;
   margin-top: 28px;

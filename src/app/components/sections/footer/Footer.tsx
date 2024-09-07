@@ -4,10 +4,10 @@ import styles from "./Footer.module.scss";
 import Logo from "/public/img/logo.png";
 import Email from "../../icon/Email";
 import Location from "../../icon/Location";
+import { antonio } from "@/app/fonts";
 const Footer: React.FC = () => {
   return (
     <>
-      {" "}
       <footer className={styles.wrapper}>
         <div className={styles.footer}>
           <div>
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                 src={Logo}
                 alt="AUSTRIA TOUR LOGO"
               />
-              <p>AUSTRIA TOUR</p>
+              <p className={antonio.className}>AUSTRIA TOUR</p>
             </div>
             <div className={styles.support}>
               <div>

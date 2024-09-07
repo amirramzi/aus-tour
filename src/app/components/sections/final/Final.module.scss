@@ -41,6 +41,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
   @include mobile {
     height: 490px;
     border-radius: $radius_c_m;
@@ -50,7 +52,8 @@
   color: $gray_15;
   h2 {
     font-weight: bold;
-    font-size: 62px;
+    font-size: 72px;
+
     @include mobile {
       text-wrap: nowrap;
       font-size: 42px;
@@ -81,4 +84,10 @@
     align-items: center;
     padding-bottom: 10px;
   }
+}
+.radial1 {
+  @include radialFinal1();
+}
+.radial2 {
+  @include radialFinal2();
 }

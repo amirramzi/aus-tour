@@ -5,15 +5,18 @@ import Image from "next/image";
 import Calendar from "../../icon/Calendar";
 import Location from "../../icon/Location";
 import DailyCounter from "../../ui/daily-counter/DailyCounter";
+import { antonio, inter } from "@/app/fonts";
 const Final: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <Image className={styles.img} alt="final match" src={img} />
         <div className={styles.content}>
+          <div className={styles.radial1} />
+          <div className={styles.radial2} />
           <div className={styles.title}>
-            <h2>FINAL MATCH</h2>
-            <p>
+            <h2 className={antonio.className}>FINAL MATCH</h2>
+            <p className={inter.className}>
               The Austria Tour concludes with the top teams from 16 events
               competing.
             </p>

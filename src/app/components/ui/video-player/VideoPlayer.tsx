@@ -13,6 +13,7 @@ const VideoPlayer = ({ children }: { children?: React.ReactNode }) => {
       >
         <source src="/video/heroVideo.mp4" type="video/mp4" width={100} />
       </video>
+      <div className={styles.back} />
       <div className={styles.gradient}>{children}</div>
     </div>
   );

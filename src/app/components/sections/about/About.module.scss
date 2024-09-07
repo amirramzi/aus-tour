@@ -10,6 +10,7 @@
   align-items: center;
   padding-top: $radius_s_d;
   padding-bottom: $radius_s_d;
+
   @include mobile {
     padding-top: $radius_s_m;
     padding-bottom: $radius_s_m;
@@ -19,22 +20,29 @@
   @include radiusCard();
   padding: 40px;
   color: $gray_15;
-  background-color: $gray_60;
+  background-color: $opacity_w_06 !important;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -40px;
   @include mobile {
     padding: 20px;
+    margin-bottom: 0;
   }
   h2 {
     font-size: 40px;
     font-weight: bold;
-    @include mobile {
-      font-size: 35px;
-    }
   }
   p {
     font-size: 16px;
     line-height: 38px;
     width: 100%;
     padding-top: 10px;
+  }
+  .radial {
+    @include radialAbout();
+  }
+  .radial1 {
+    @include radialAbout1();
   }
 }
 .wrapper {
@@ -59,12 +67,14 @@
   width: 410px;
   height: 448px;
   padding: 40px;
-  background-color: $gray_60;
+  background-color: $opacity_w_06;
   color: $gray_15;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
+  position: relative;
+  overflow: hidden;
   @include mobile {
     width: auto;
     margin-top: 40px;
@@ -73,7 +83,7 @@
   }
   h3 {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
   }
   ul {
     height: 188px;
@@ -88,5 +98,8 @@
       display: flex;
       align-items: center;
     }
+  }
+  .radial2 {
+    @include radialAbout2();
   }
 }

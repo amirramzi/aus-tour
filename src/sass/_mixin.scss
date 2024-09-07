@@ -1,4 +1,5 @@
 @import "./variable";
+
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
@@ -23,10 +24,89 @@
     border-radius: $radius_c_m;
   }
 }
+
 @mixin radial {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(165, 70, 1, 0.3) 0%,
+    rgba(130, 102, 43, 0.23) 25%,
+    rgba(95, 134, 84, 0.15) 50%,
+    rgba(60, 167, 126, 0.08) 75%,
+    rgba(43, 183, 147, 0.04) 87.5%,
     rgba(25, 199, 168, 0) 100%
   );
+  border-radius: 50%;
+}
+@mixin boxRadial {
+  width: 751px;
+  height: 664px;
+}
+@mixin radialTopRight {
+  position: absolute;
+  right: -511px;
+  top: -283px;
+  @include boxRadial();
+  @include radial();
+}
+@mixin radialBottomLeft {
+  position: absolute;
+  right: -335px;
+  bottom: -443px;
+  @include boxRadial();
+  @include radial();
+}
+@mixin radialLeft {
+  position: absolute;
+  left: -536px;
+  bottom: -185px;
+  @include boxRadial();
+  @include radial();
+}
+@mixin radialAbout {
+  position: absolute;
+  right: -300px;
+  top: -250px;
+  @include mobile {
+    right: -650px;
+    top: -600px;
+  }
+  width: 765px;
+  height: 1217px;
+  transform: rotate(30deg);
+  @include radial();
+}
+@mixin radialAbout1 {
+  position: absolute;
+  left: -250px;
+  top: -200px;
+  @include mobile {
+    left: -250px;
+    top: -200px;
+  }
+  width: 587px;
+  height: 369px;
+  transform: rotate(154deg);
+  @include radial();
+}
+@mixin radialAbout2 {
+  position: absolute;
+  right: -401px;
+  top: -400px;
+  @include boxRadial();
+  @include radial();
+}
+@mixin radialFinal1 {
+  @include radial();
+  width: 969px;
+  height: 609px;
+  position: absolute;
+  bottom: -371px;
+  right: -445px;
+}
+@mixin radialFinal2 {
+  @include boxRadial();
+  @include radial();
+  position: absolute;
+  top: -451px;
+  left: -186px;
 }

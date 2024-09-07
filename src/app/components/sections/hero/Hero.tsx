@@ -4,12 +4,16 @@ import Nav from "../../ui/nav/Nav";
 import ButtonRegister from "../../ui/button/ButtonRegister";
 import DailyCounter from "../../ui/daily-counter/DailyCounter";
 import styles from "./Hero.module.scss";
+import { antonio } from "@/app/fonts";
+
 const Hero: React.FC = () => {
   return (
     <VideoPlayer>
       <Nav />
       <div className={styles.content}>
-        <h1 className={styles.title}>Austria Futsal Tour</h1>
+        <h1 className={`${styles.title} ${antonio.className}`}>
+          Austria Futsal Tour
+        </h1>
         <p className={styles.description}>
           Join top teams and fans from around the world for a high-energy,
           action-packed tournament.

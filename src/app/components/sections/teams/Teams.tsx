@@ -8,6 +8,7 @@ import logo4 from "/public/img/team-logo/logo4.png";
 import logo5 from "/public/img/team-logo/logo5.png";
 import logo6 from "/public/img/team-logo/logo6.png";
 import Select from "../../ui/select/Select";
+import { antonio, inter } from "@/app/fonts";
 
 const Teams: React.FC = () => {
   const team = [
@@ -25,8 +26,8 @@ const Teams: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.title}>
           <div>
-            <h3>Registered Teams</h3>
-            <p>
+            <h3 className={antonio.className}>Registered Teams</h3>
+            <p className={inter.className}>
               Check out the teams that have already signed up to compete in the
               Austria Tour.
             </p>
@@ -39,7 +40,7 @@ const Teams: React.FC = () => {
           {team.map((item, index) => (
             <div key={index} className={styles.teamCard}>
               <Image src={item.img} alt="team logo" />
-              <span>Team Very Long Name</span>
+              <span className={inter.className}>Team Very Long Name</span>
             </div>
           ))}
           {team.map((item, index) => (

@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./Nav.module.scss";
 import Logo from "/public/img/logo.png";
 import NavItem from "./NavItem";
-
+import { antonio } from "../../../fonts";
 const Nav: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
 
       if (nav) {
         const offset = window.scrollY;
-        if (offset > 700) {
+        if (offset > 100) {
           setScrolled(true);
         } else {
           setScrolled(false);
@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
         >
           <div className={`${styles.brand} ${scrolled ? styles.branS : ""}`}>
             <Image className={styles.img} src={Logo} alt="AUSTRIA TOUR LOGO" />
-            <p>AUSTRIA TOUR</p>
+            <p className={antonio.className}>AUSTRIA TOUR</p>
           </div>
           <NavItem />
         </div>

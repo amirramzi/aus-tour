@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Burger from "../../icon/Burger";
 import CloseMenu from "../../icon/CloseMenu";
 import styles from "./NavItem.module.scss";
+import { inter } from "../../../fonts";
 
 const NavItem: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,7 +96,9 @@ const NavItem: React.FC = () => {
 
               <ul className={styles.menuList}>
                 {navItem.map((item) => (
-                  <li key={item.id}>{item.name}</li>
+                  <li className={inter.className} key={item.id}>
+                    {item.name}
+                  </li>
                 ))}
               </ul>
             </div>

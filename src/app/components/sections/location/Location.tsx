@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./Location.module.scss";
 import Calendar from "../../icon/Calendar";
 import AustriaMap from "../../icon/AustriaMap";
+import { antonio, inter } from "@/app/fonts";
 
 const Location: React.FC = () => {
   const [activeCard, setActiveCard] = useState<number | null>(0);
@@ -33,7 +34,7 @@ const Location: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h3>Dates & Locations</h3>
+      <h3 className={antonio.className}>Dates & Locations</h3>
 
       <div className={styles.cardWrapper}>
         {LocCard.map((item, index) => (
@@ -46,10 +47,10 @@ const Location: React.FC = () => {
                 : styles.locCard
             }
           >
-            <h6>{item.name}</h6>
+            <h6 className={inter.className}>{item.name}</h6>
             <div className={styles.date}>
               <Calendar />
-              <span>Sat, 25 Nov 2023</span>
+              <span className={inter.className}>Sat, 25 Nov 2023</span>
             </div>
           </div>
         ))}

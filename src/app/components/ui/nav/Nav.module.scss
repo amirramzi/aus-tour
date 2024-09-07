@@ -5,6 +5,7 @@
 }
 .nav {
   @include container();
+  z-index: 500;
 }
 .container {
   height: 99px;

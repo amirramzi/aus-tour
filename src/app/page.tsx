@@ -10,7 +10,7 @@ import styles from "./page.module.scss";
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.layout}>
       <Hero />
       <Place />
       <About />
@@ -18,6 +18,6 @@ export default function Home() {
       <Teams />
       <Final />
       <Footer />
-    </>
+    </div>
   );
 }
