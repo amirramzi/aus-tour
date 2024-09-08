@@ -5,7 +5,6 @@ import ArrowUp from "../../icon/ArrowUp";
 import ArrowDown from "../../icon/ArrowDown";
 import CheckCircle from "../../icon/CheckCircle";
 
-
 interface Option {
   value: string;
   label: string;

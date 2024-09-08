@@ -54,7 +54,6 @@
     font-weight: 700;
     font-size: 28px;
     text-wrap: nowrap;
-    letter-spacing: -0.03em;
     @include mobile {
       font-size: 16px;
     }
@@ -70,13 +69,14 @@
 }
 .copy {
   @include centerWrapper();
-
+  height: 40px;
   background-color: $bg_dark;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: $gray_15;
-  padding-top: 20px;
+  color: $gray_45;
+  padding-top: 10px;
+  font-size: 12px;
   span {
     @include container();
     background-color: $bg_dark;
