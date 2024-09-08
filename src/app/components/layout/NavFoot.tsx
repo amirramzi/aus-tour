@@ -5,7 +5,7 @@ import styles from "./NavFoot.module.scss";
 const NavFoot = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles.container}>
-      <Nav />
+      <Nav set={5} />
       <div className={styles.wrapper}>
         <div className={styles.child}>{children}</div>
       </div>

@@ -10,7 +10,7 @@ import Timer from "../../ui/daily-counter/Timer";
 const Hero: React.FC = () => {
   return (
     <VideoPlayer>
-      <Nav />
+      <Nav set={700} />
       <div className={styles.content}>
         <h1 className={`${styles.title} ${antonio.className}`}>
           Austria Futsal Tour

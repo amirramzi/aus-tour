@@ -5,7 +5,11 @@ import styles from "./Nav.module.scss";
 import Logo from "/public/img/logo.png";
 import NavItem from "./NavItem";
 import { antonio } from "../../../fonts";
-const Nav: React.FC = () => {
+
+interface Props {
+  set: number;
+}
+const Nav: React.FC<Props> = ({ set }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -14,7 +18,7 @@ const Nav: React.FC = () => {
 
       if (nav) {
         const offset = window.scrollY;
-        if (offset > 700) {
+        if (offset > set) {
           setScrolled(true);
         } else {
           setScrolled(false);

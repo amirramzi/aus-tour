@@ -6,10 +6,10 @@ import { TailSpin } from "react-loader-spinner";
 import styles from "./page.module.scss";
 import InputUiKit from "../components/ui/input/InputUiKit";
 import Select from "../components/ui/select/Select";
-import Upload from "./components/UploadInput";
-import BaseTeamLogo from "./components/icon/BaseTeamLogo";
+import BaseTeamLogo from "./components/BaseTeamLogo";
 import { antonio, inter } from "../fonts";
-import { BaseIdCard } from "./components/icon/BaseIdCard";
+import BaseIdCard from "./components/BaseIdCard";
+import UploadInput from "./components/UploadInput";
 
 interface RegisterFormValues {
   teamName: string;
@@ -19,6 +19,8 @@ interface RegisterFormValues {
   phoneNumber: string;
   address: string;
   postalCode: string;
+  teamLogo: File | null;
+  idCard: File | null;
 }
 
 const validationSchema = Yup.object({
@@ -31,10 +33,23 @@ const validationSchema = Yup.object({
   phoneNumber: Yup.string().required("Enter your phone number"),
   address: Yup.string().required("Enter your address"),
   postalCode: Yup.string().required("Enter your postal code"),
+  teamLogo: Yup.mixed()
+    .required("Team logo is required.")
+    .test("fileSize", "File size is too large. Max 3MB", (value: any) => {
+      return value && value.size <= 3 * 1024 * 1024;
+    }),
+  idCard: Yup.mixed()
+    .required("ID card is required.")
+    .test("fileSize", "File size is too large. Max 3MB", (value: any) => {
+      return value && value.size <= 3 * 1024 * 1024;
+    }),
 });
 
 export default function RegisterPage() {
   const [loading, setLoading] = useState<boolean>(false);
+  const [idCardPreview, setIdCardPreview] = useState<string | null>(null);
+  const [teamLogoPreview, setTeamLogoPreview] = useState<string | null>(null);
+
   const formik = useFormik<RegisterFormValues>({
     initialValues: {
       teamName: "",
@@ -44,16 +59,48 @@ export default function RegisterPage() {
       phoneNumber: "",
       address: "",
       postalCode: "",
+      teamLogo: null,
+      idCard: null,
     },
     validationSchema,
     onSubmit: (
       values: RegisterFormValues,
       { setSubmitting }: FormikHelpers<RegisterFormValues>
     ) => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
+      setLoading(true);
+      setTimeout(() => {
+        console.log(values);
+        setLoading(false);
+        setSubmitting(false);
+      }, 2000);
     },
   });
+
+  const handleIdCardChange = (name: string, file: File | null) => {
+    formik.setFieldValue(name, file);
+    if (file && file.size <= 3 * 1024 * 1024) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setIdCardPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setIdCardPreview(null);
+    }
+  };
+
+  const handleTeamLogoChange = (name: string, file: File | null) => {
+    formik.setFieldValue(name, file);
+    if (file && file.size <= 3 * 1024 * 1024) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setTeamLogoPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setTeamLogoPreview(null);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -61,10 +108,25 @@ export default function RegisterPage() {
       <form onSubmit={formik.handleSubmit}>
         <div className={styles.team}>
           <div className={styles.teamLogo}>
-            <label htmlFor="">Team Logo</label>
+            <label htmlFor="">Team Logo*</label>
             <div className={styles.logoInput}>
-              <BaseTeamLogo />
-              <Upload />
+              <BaseTeamLogo
+                imageSrc={teamLogoPreview}
+                error={
+                  formik.touched.teamLogo && formik.errors.teamLogo
+                    ? formik.errors.teamLogo
+                    : ""
+                }
+              />
+              <UploadInput
+                name="teamLogo"
+                onChange={(name, file) => handleTeamLogoChange(name, file)}
+                error={
+                  formik.touched.teamLogo && formik.errors.teamLogo
+                    ? formik.errors.teamLogo
+                    : ""
+                }
+              />
             </div>
           </div>
           <div className={styles.teamInput}>
@@ -82,6 +144,7 @@ export default function RegisterPage() {
               }
             />
             <Select
+            // Uncomment and customize Select options when ready
             // name="teamName"
             // label="Team Name*"
             // value={formik.values.teamName}
@@ -187,19 +250,36 @@ export default function RegisterPage() {
             }
           />
         </div>
+
         <div className={styles.idCard}>
           <label htmlFor="">ID Card*</label>
           <div className={styles.idCardInput}>
-            <BaseIdCard />
-            <Upload />
+            <BaseIdCard
+              error={
+                formik.touched.idCard && formik.errors.idCard
+                  ? formik.errors.idCard
+                  : ""
+              }
+              imageSrc={idCardPreview}
+            />
+            <UploadInput
+              name="idCard"
+              onChange={(name, file) => handleIdCardChange(name, file)}
+              error={
+                formik.touched.idCard && formik.errors.idCard
+                  ? formik.errors.idCard
+                  : ""
+              }
+            />
           </div>
         </div>
+
         <p>
           By submitting, you agree to the AGB and confirm your irrevocable
           registration.
         </p>
+
         <button
-          onClick={() => setLoading(!loading)}
           className={`${styles.submit} ${loading ? styles.SubmitLoad : ""}`}
           type="submit"
           disabled={formik.isSubmitting}
