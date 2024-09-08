@@ -44,7 +44,7 @@
   position: relative;
   overflow: hidden;
   @include mobile {
-    height: 490px;
+    height: 390px;
     border-radius: $radius_c_m;
     padding: 16px;
   }
@@ -71,19 +71,30 @@
 .date {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   @include mobile {
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 .loc {
   color: $gray_15;
+
   div {
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
+    padding: 8px 0;
+    &:last-child {
+      margin-left: 35px;
+    }
+  }
+}
+.timer {
+  @include mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 .radial1 {

@@ -6,14 +6,16 @@
   align-items: center;
   background-color: $bg_dark;
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   @include mobile {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    padding-bottom: 50px;
   }
 }
+
 .title {
   width: 100%;
   height: 102px;
@@ -27,19 +29,25 @@
     font-size: 40px;
     color: $gray_15;
   }
+
   p {
     font-weight: 400;
     size: 16px;
     color: $gray_30;
   }
 }
+
 .cardWrapper {
   @include container();
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: end;
   &:first-child {
-    @include radialTopRight();
+    background: #ccc !important;
+  }
+  &:first-child {
+    background-color: aqua;
   }
   @include mobile {
     flex-direction: column;
@@ -51,55 +59,103 @@
 .card {
   @include radiusCard();
   width: 382px;
-  height: 372px;
+  height: 373px;
   margin-top: 30px;
+  padding-top: 40px;
   background-color: $opacity_w_06;
   color: $gray_15;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
+
   @include mobile {
+    padding: 24px;
     width: 328px;
     height: 273px;
-    padding: 24px;
   }
+
   .radialTopRight {
     @include radialTopRight();
   }
+
   .radialBottomLeft {
     @include radialBottomLeft();
   }
+
   .radialLeft {
     @include radialLeft();
   }
+
   h5 {
     font-weight: bold;
     font-size: 40px;
   }
+
   .img {
     width: 160px;
     height: 126px;
   }
+
   p {
-    width: 270px;
     font-size: 16px;
     text-align: center;
     line-height: 38px;
+    padding: 24px;
+  }
+  &:nth-child(2) {
+    width: 388px;
+    height: 410px;
+    @include mobile {
+      order: 1 !important;
+      min-width: 328px;
+      min-height: 301px;
+      width: auto;
+      height: auto;
+    }
+    p {
+      @include mobile {
+        font-size: 14px;
+        padding: 14px;
+      }
+    }
+  }
+  &:first-child {
+    // width: 388px;
+    // height: 410px;
+    @include mobile {
+      order: 2 !important;
+      // min-width: 328px;
+      // min-height: 301px;
+      // width: auto;
+      // height: auto;
+    }
+  }
+  &:last-child {
+    // width: 388px;
+    // height: 410px;
+    @include mobile {
+      order: 3 !important;
+      // min-width: 328px;
+      // min-height: 301px;
+      // width: auto;
+      // height: auto;
+    }
   }
 }
 
 .note {
   text-align: center;
   margin-top: 28px;
-
+  padding: 0px 13px;
   span:first-child {
     font-weight: 700;
     font-size: 16px;
     color: $gray_15;
   }
+
   span:last-child {
     font-weight: 400;
     font-size: 15px;

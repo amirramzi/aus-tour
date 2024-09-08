@@ -1,0 +1,39 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 596px;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+.label {
+  font-size: 14px;
+  color: $gray_30;
+  font-weight: 500;
+  padding-bottom: 12px;
+}
+.input {
+  height: 48px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: $opacity_w_06;
+  border-radius: 32px;
+  border: none;
+  outline: none;
+  color: $gray_15;
+  padding: 8px 20px;
+}
+.errorMessage {
+  font-size: 12px;
+  font-weight: 400;
+  color: $error;
+  padding-top: 4px;
+}
+.errorInput {
+  background-color: $opacity_brand_20;
+  border: 1px solid $error;
+}

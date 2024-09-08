@@ -30,10 +30,13 @@ const Final: React.FC = () => {
               </div>
               <div>
                 <Location />
-                <span>Sportzentrum Niederösterreich, St. Pölten</span>
+                <span>Sportzentrum Niederösterreich,</span>
               </div>
+              <div>St. Pölten</div>
             </div>
-            <Timer />
+            <div className={styles.timer}>
+              <Timer />
+            </div>
           </div>
         </div>
       </div>

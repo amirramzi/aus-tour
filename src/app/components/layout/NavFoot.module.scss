@@ -1,0 +1,26 @@
+@import "../../../sass/variable";
+@import "../../../sass/mixin";
+
+.container {
+  width: 100%;
+  max-width: 1980px;
+  background-color: $bg_dark;
+}
+.wrapper {
+  @include centerWrapper();
+  @include mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.child {
+  max-width: 1232px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include mobile {
+    width: 100%;
+  }
+}
+.foot {
+  background-color: $bg_light;
+}
