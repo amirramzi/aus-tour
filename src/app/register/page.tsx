@@ -21,6 +21,7 @@ interface RegisterFormValues {
   postalCode: string;
   teamLogo: File | null;
   idCard: File | null;
+  stadium: string;
 }
 
 const validationSchema = Yup.object({
@@ -43,6 +44,7 @@ const validationSchema = Yup.object({
     .test("fileSize", "File size is too large. Max 3MB", (value: any) => {
       return value && value.size <= 3 * 1024 * 1024;
     }),
+  stadium: Yup.string().required("Please select a stadium."),
 });
 
 export default function RegisterPage() {
@@ -53,6 +55,7 @@ export default function RegisterPage() {
   const formik = useFormik<RegisterFormValues>({
     initialValues: {
       teamName: "",
+      stadium: "",
       name: "",
       lastName: "",
       email: "",
@@ -105,7 +108,7 @@ export default function RegisterPage() {
   return (
     <div className={styles.container}>
       <h1 className={antonio.className}>Register Team</h1>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} className={inter.className}>
         <div className={styles.team}>
           <div className={styles.teamLogo}>
             <label htmlFor="">Team Logo*</label>
@@ -120,6 +123,7 @@ export default function RegisterPage() {
               />
               <UploadInput
                 name="teamLogo"
+                trash={teamLogoPreview}
                 onChange={(name, file) => handleTeamLogoChange(name, file)}
                 error={
                   formik.touched.teamLogo && formik.errors.teamLogo
@@ -144,28 +148,24 @@ export default function RegisterPage() {
               }
             />
             <Select
-            // Uncomment and customize Select options when ready
-            // name="teamName"
-            // label="Team Name*"
-            // value={formik.values.teamName}
-            // onChange={(value: string) =>
-            //   formik.setFieldValue("teamName", value)
-            // }
-            // onBlur={formik.handleBlur}
-            // options={[
-            //   {
-            //     value: "sporthalle_1",
-            //     label: "Sporthalle Viktring Klagenfurt",
-            //   },
-            //   { value: "stadthalle_2", label: "Stadthalle Steyr" },
-            //   { value: "stadium_3", label: "Another Stadium" },
-            //   { value: "stadium_4", label: "Yet Another Stadium" },
-            // ]}
-            // error={
-            //   formik.touched.teamName && formik.errors.teamName
-            //     ? formik.errors.teamName
-            //     : ""
-            // }
+              name="stadium"
+              label="Stadium*"
+              value={formik.values.stadium}
+              onChange={(value: string) =>
+                formik.setFieldValue("stadium", value)
+              }
+              onBlur={formik.handleBlur}
+              options={[
+                { value: "sporthalle_1" },
+                { value: "stadthalle_2" },
+                { value: "stadium_3" },
+                { value: "stadium_4" },
+              ]}
+              error={
+                formik.touched.stadium && formik.errors.stadium
+                  ? formik.errors.stadium
+                  : ""
+              }
             />
           </div>
         </div>
@@ -201,6 +201,7 @@ export default function RegisterPage() {
             name="email"
             label="Email*"
             type="email"
+            place="example@example.com"
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -264,6 +265,7 @@ export default function RegisterPage() {
             />
             <UploadInput
               name="idCard"
+              trash={idCardPreview}
               onChange={(name, file) => handleIdCardChange(name, file)}
               error={
                 formik.touched.idCard && formik.errors.idCard
@@ -292,9 +294,11 @@ export default function RegisterPage() {
               color="#f8f8f8"
               ariaLabel="tail-spin-loading"
               radius="1"
+              wrapperStyle={{}}
+              wrapperClass="spinner"
             />
           )}
-          <span className={inter.className}>Submit</span>
+          Submit
         </button>
       </form>
     </div>

@@ -31,17 +31,6 @@
     border-radius: 32px;
     color: $gray_15;
     padding: 8px 20px;
-    // text-wrap: nowrap;
-    // padding: 15px 20px;
-    // font-size: 14px;
-    // background-color: $gray_75;
-    // color: $gray_15;
-    // border-radius: 32px;
-    // cursor: pointer;
-    // position: relative;
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
   }
 
   .optionsList {
@@ -73,4 +62,21 @@
       padding: 10px 20px;
     }
   }
+}
+.selectedOption {
+  span {
+    color: $opacity_w_30;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.errorMessage {
+  font-size: 12px;
+  font-weight: 400;
+  color: $error;
+  padding-top: 4px;
+}
+.errorSelect {
+  background-color: $opacity_brand_20 !important;
+  border: 1px solid $error;
 }
