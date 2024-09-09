@@ -2,8 +2,9 @@
 @import "../../../../sass/mixin";
 .backDrop {
   position: fixed;
-  width: 100%;
-  max-width: 1980px;
+  left: 0;
+  right: 0;
+  top: 0;
   height: 100%;
   z-index: 999999;
   background-color: $opacity_b_40;

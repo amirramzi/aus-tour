@@ -12,7 +12,11 @@ import styles from "./Form.module.scss";
 import SubmitButton from "./SubmitButton";
 
 interface FormProps {
-  setIsOpenRegistered: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpenRegistered: (open: boolean) => void;
+  setIsOpenDeleteLogo: (open: boolean) => void;
+  setIsOpenDeleteIdCard: (open: boolean) => void;
+  logoInputRef: React.RefObject<{ trashHandler: () => void }>;
+  idCardInputRef: React.RefObject<{ trashHandler: () => void }>;
 }
 
 interface RegisterFormValues {
@@ -29,19 +33,20 @@ interface RegisterFormValues {
 }
 
 const validationSchema = Yup.object({
-  teamName: Yup.string().required("Enter your team name."),
-  name: Yup.string().required("Enter your name"),
-  lastName: Yup.string().required("Enter your last name"),
+  teamName: Yup.string().required("Enter your team name.").max(255),
+  name: Yup.string().required("Enter your name").max(255),
+  lastName: Yup.string().required("Enter your last name").max(255),
   email: Yup.string()
     .email("Enter a valid email.")
     .required("Enter your email"),
   phoneNumber: Yup.string().required("Enter your phone number"),
-  address: Yup.string().required("Enter your address"),
+  address: Yup.string().required("Enter your address").max(255),
   postalCode: Yup.string().required("Enter your postal code"),
   teamLogo: Yup.mixed()
     .notRequired()
     .test("fileSize", "File size is too large. Max 3MB", (value: any) => {
-      return value && value.size <= 3 * 1024 * 1024;
+      if (!value) return true;
+      return value.size <= 3 * 1024 * 1024;
     }),
 
   idCard: Yup.mixed()
@@ -51,7 +56,13 @@ const validationSchema = Yup.object({
     }),
   stadium: Yup.string().required("Please select a stadium."),
 });
-const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
+const Form: React.FC<FormProps> = ({
+  setIsOpenRegistered,
+  logoInputRef,
+  setIsOpenDeleteLogo,
+  setIsOpenDeleteIdCard,
+  idCardInputRef,
+}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [idCardPreview, setIdCardPreview] = useState<string | null>(null);
   const [teamLogoPreview, setTeamLogoPreview] = useState<string | null>(null);
@@ -86,7 +97,7 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
 
   const handleIdCardChange = (name: string, file: File | null) => {
     formik.setFieldValue(name, file);
-    if (file && file.size <= 3 * 1024 * 1024) {
+    if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setIdCardPreview(reader.result as string);
@@ -99,7 +110,7 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
 
   const handleTeamLogoChange = (name: string, file: File | null) => {
     formik.setFieldValue(name, file);
-    if (file && file.size <= 3 * 1024 * 1024) {
+    if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setTeamLogoPreview(reader.result as string);
@@ -109,6 +120,7 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
       setTeamLogoPreview(null);
     }
   };
+
   return (
     <div className={styles.container}>
       <h1 className={antonio.className}>Register Team</h1>
@@ -127,6 +139,7 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
               />
               <UploadInput
                 name="teamLogo"
+                onClick={() => setIsOpenDeleteLogo(true)}
                 trash={teamLogoPreview}
                 onChange={(name, file) => handleTeamLogoChange(name, file)}
                 error={
@@ -134,6 +147,7 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
                     ? formik.errors.teamLogo
                     : ""
                 }
+                ref={logoInputRef}
               />
             </div>
           </div>
@@ -160,10 +174,10 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
               }
               onBlur={formik.handleBlur}
               options={[
-                { value: "sporthalle_1" },
-                { value: "stadthalle_2" },
-                { value: "stadium_3" },
-                { value: "stadium_4" },
+                { value: "Sporthalle Viktring Klagenfurt" },
+                { value: "Stadthalle Steyr" },
+                { value: "Stadthalle Steyr" },
+                { value: "Stadthalle Steyr" },
               ]}
               error={
                 formik.touched.stadium && formik.errors.stadium
@@ -218,7 +232,7 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
           <InputUiKit
             name="phoneNumber"
             label="Phone Number*"
-            type="text"
+            type="number"
             value={formik.values.phoneNumber}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -270,12 +284,14 @@ const Form: React.FC<FormProps> = ({ setIsOpenRegistered }) => {
             <UploadInput
               name="idCard"
               trash={idCardPreview}
+              onClick={() => setIsOpenDeleteIdCard(true)}
               onChange={(name, file) => handleIdCardChange(name, file)}
               error={
                 formik.touched.idCard && formik.errors.idCard
                   ? formik.errors.idCard
                   : ""
               }
+              ref={idCardInputRef}
             />
           </div>
         </div>

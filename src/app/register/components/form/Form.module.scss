@@ -1,6 +1,7 @@
 @import "../../../../sass/variable";
 @import "../../../../sass/mixin";
 .container {
+  position: relative;
   h1 {
     color: $gray_15;
     font-weight: bold;

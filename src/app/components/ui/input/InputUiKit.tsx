@@ -5,7 +5,7 @@ import styles from "./InputUiKit.module.scss";
 interface InputProps {
   name: string;
   label: string;
-  type: "email" | "text";
+  type: "email" | "text" | "number";
   value: string;
   error?: string;
   place?: string;
@@ -16,7 +16,7 @@ interface InputProps {
 const InputUiKit: React.FC<InputProps> = ({
   name,
   label,
-  type ,
+  type,
   value,
   error,
   place,
