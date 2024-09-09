@@ -7,7 +7,7 @@ import logo3 from "/public/img/team-logo/logo3.png";
 import logo4 from "/public/img/team-logo/logo4.png";
 import logo5 from "/public/img/team-logo/logo5.png";
 import logo6 from "/public/img/team-logo/logo6.png";
-import Select from "../../ui/select/Select";
+// import Select from "../../ui/select/Select";
 import { antonio, inter } from "@/app/fonts";
 
 const Teams: React.FC = () => {
@@ -32,9 +32,7 @@ const Teams: React.FC = () => {
               Austria Tour.
             </p>
           </div>
-          <div>
-            <Select />
-          </div>
+          <div>{/* <Select /> */}</div>
         </div>
         <div className={styles.teamWrapper}>
           {team.map((item, index) => (

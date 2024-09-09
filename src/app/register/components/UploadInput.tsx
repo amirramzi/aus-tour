@@ -40,21 +40,24 @@ const UploadInput: React.FC<UploadInputProps> = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.btnWrapper}>
-        <button
-          className={styles.btn}
-          onClick={handleButtonClick}
-          type="button"
-        >
-          <UploadIcon />
-          <span>Upload Image</span>
-        </button>
-        {trash && (
-          <button onClick={trashHandler} className={styles.trash}>
-            <Trash />
+        <div className={styles.buttons}>
+          <button
+            className={styles.btn}
+            onClick={handleButtonClick}
+            type="button"
+          >
+            <UploadIcon />
+            <span>Upload Image</span>
           </button>
-        )}
+          {trash && (
+            <button onClick={trashHandler} className={styles.trash}>
+              <Trash />
+            </button>
+          )}
+        </div>
+        <p>*.png, *.jpeg, files up to 3MB.</p>
       </div>
-      <p>*.png, *.jpeg, files up to 3MB.</p>
+
       {error && <div className={styles.error}>{error}</div>}
       <input
         type="file"

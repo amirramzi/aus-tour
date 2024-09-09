@@ -1,0 +1,93 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.container {
+  h1 {
+    color: $gray_15;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+  p {
+    font-weight: 400;
+    color: $gray_15;
+    font-size: 12px;
+    line-height: 24px;
+    padding-top: 40px;
+    @include mobile {
+      padding-top: 32px;
+    }
+  }
+}
+
+.teamLogo {
+  padding-bottom: 40px;
+  @include mobile {
+    padding-bottom: 0;
+  }
+  label {
+    color: $gray_30;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .logoInput {
+    padding-top: 12px;
+    width: 273px;
+    height: 92px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.teamInput {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 40px;
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 32px;
+  }
+}
+.information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  border-top: 1px solid $opacity_w_15;
+  padding-top: 40px;
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 32px;
+  }
+}
+.idCard {
+  padding-top: 40px;
+  @include mobile {
+    padding-top: 32px;
+  }
+  label {
+    color: $gray_30;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .idCardInput {
+    padding-top: 12px;
+    width: 313px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      width: 195px;
+      height: 180px;
+    }
+  }
+}
+.submit {
+  margin-top: 40px;
+  @include mobile {
+    margin-top: 32px;
+  }
+}

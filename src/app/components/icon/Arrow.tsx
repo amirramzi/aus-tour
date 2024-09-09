@@ -1,6 +1,6 @@
 "use client";
 
-const Arrow = () => {
+const Arrow = ({ color }: { color: string }) => {
   return (
     <svg
       width="18"
@@ -11,7 +11,7 @@ const Arrow = () => {
     >
       <path
         d="M1 7H17M17 7L11 1M17 7L11 13"
-        stroke="#C71919"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

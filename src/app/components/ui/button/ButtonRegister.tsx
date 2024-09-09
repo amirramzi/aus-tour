@@ -14,7 +14,7 @@ const ButtonRegister = ({ ...props }: React.ComponentProps<"button">) => {
     <button {...props} className={styles.button} onClick={pushHandler}>
       <span className={styles.label}>Register Your Team</span>
       <div className={styles.icon}>
-        <Arrow />
+        <Arrow color="#C71919" />
       </div>
     </button>
   );

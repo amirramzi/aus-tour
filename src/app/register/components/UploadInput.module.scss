@@ -12,6 +12,11 @@
   }
 }
 .btnWrapper {
+  p {
+    padding-top: 8px !important;
+  }
+}
+.buttons {
   width: 225px;
   display: flex;
   justify-content: space-between;

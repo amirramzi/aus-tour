@@ -26,6 +26,10 @@
   outline: none;
   color: $gray_15;
   padding: 8px 20px;
+  &:focus {
+    background-color: $opacity_w_15;
+    border: none;
+  }
 }
 .errorMessage {
   font-size: 12px;

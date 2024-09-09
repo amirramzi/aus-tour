@@ -1,0 +1,30 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  background-color: transparent;
+  color: $gray_15;
+  border: 1px solid $gray_15;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.btnIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 135px;
+  padding: 10 20px;
+  @include mobile {
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  span {
+    @include mobile {
+      padding-right: 10px;
+    }
+  }
+}

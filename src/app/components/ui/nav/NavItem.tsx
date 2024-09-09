@@ -4,13 +4,16 @@ import Burger from "../../icon/Burger";
 import CloseMenu from "../../icon/CloseMenu";
 import styles from "./NavItem.module.scss";
 import { inter } from "../../../fonts";
+import OutlineButton from "../button/OutlineButton";
+import Arrow from "../../icon/Arrow";
+import { useRouter } from "next/navigation";
 
 const NavItem: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuPositionY, setMenuPositionY] = useState(0);
   const [dragStartY, setDragStartY] = useState<number | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-
+  const router = useRouter();
   const handleBurgerClick = () => {
     setIsMenuOpen(true);
     setMenuPositionY(0);
@@ -53,6 +56,10 @@ const NavItem: React.FC = () => {
     };
   }, []);
 
+  const redirectHandler = () => {
+    router.push("/register");
+  };
+
   const navItem = [
     { id: 1, name: "Home", href: "/" },
     { id: 2, name: "Matches & Table", href: "/" },
@@ -69,6 +76,12 @@ const NavItem: React.FC = () => {
             {item.name}
           </li>
         ))}
+
+        <OutlineButton
+          onClick={redirectHandler}
+          label="Register"
+          icon={<Arrow color="#f8f8f8" />}
+        />
       </ul>
       {/* mobile */}
       <div className={styles.mobile}>
@@ -100,6 +113,11 @@ const NavItem: React.FC = () => {
                     {item.name}
                   </li>
                 ))}
+                <OutlineButton
+                  onClick={redirectHandler}
+                  label="Register"
+                  icon={<Arrow color="#f8f8f8" />}
+                />
               </ul>
             </div>
           </div>

@@ -32,10 +32,13 @@
     color: $gray_15;
     padding: 8px 20px;
   }
-
+  .focus {
+    background-color: $opacity_w_15;
+  }
   .optionsList {
     list-style: none;
-    background-color: $gray_75;
+    background-color: $opacity_w_15;
+    backdrop-filter: blur(40px);
     border-radius: 24px;
     max-height: 192px;
     position: absolute;
@@ -50,7 +53,6 @@
     border-radius: 32px;
     cursor: pointer;
     color: $gray_15;
-    background-color: $gray_75;
     transition: background-color 0.2s ease-in-out;
 
     &.selected {

@@ -15,7 +15,7 @@ interface SelectProps {
   name: string;
   onChange: (value: string) => void;
   value: string;
-  onBlur: (e: React.FocusEvent<any>) => void; 
+  onBlur: (e: React.FocusEvent<any>) => void;
   error?: string;
 }
 
@@ -46,19 +46,18 @@ const Select: React.FC<SelectProps> = ({
       !selectRef.current.contains(event.target as Node)
     ) {
       setIsOpen(false);
-      triggerBlur(); 
+      triggerBlur();
     }
   };
 
   const triggerBlur = () => {
-   
     const event = {
       target: {
-        name, 
+        name,
       },
     } as React.FocusEvent<any>;
 
-    onBlur(event); 
+    onBlur(event);
   };
 
   useEffect(() => {
@@ -77,9 +76,11 @@ const Select: React.FC<SelectProps> = ({
       <div className={styles.wrapper} ref={selectRef}>
         <label htmlFor={name}>{label}</label>
         <div
-          className={`${styles.selectBox} ${error ? styles.errorSelect : ""}`}
+          className={`${styles.selectBox} ${isOpen ? styles.focus : ""} ${
+            error ? styles.errorSelect : ""
+          }`}
           onClick={() => setIsOpen((prev) => !prev)}
-          onBlur={triggerBlur} 
+          onBlur={triggerBlur}
         >
           <div className={styles.selectedOption}>
             {selectedOption ? (
