@@ -14,10 +14,8 @@
 .navItem {
   font-weight: 400;
   size: 16px;
-  color: #969696;
-  &:first-child {
-    color: $gray_15;
-  }
+  color: $gray_45;
+  text-decoration: none;
 }
 
 .mobile {
@@ -78,9 +76,13 @@
     margin: 15px 0;
     font-weight: 400;
     size: 16px;
-    color: #969696;
-    &:first-child {
-      color: $gray_15;
-    }
   }
+  .mobLink {
+    text-decoration: none;
+    color: $gray_45;
+  }
+}
+
+.active {
+  color: $gray_15 !important;
 }

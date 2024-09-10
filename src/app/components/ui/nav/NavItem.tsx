@@ -6,7 +6,8 @@ import styles from "./NavItem.module.scss";
 import { inter } from "../../../fonts";
 import OutlineButton from "../button/OutlineButton";
 import Arrow from "../../icon/Arrow";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 const NavItem: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,8 @@ const NavItem: React.FC = () => {
   const [dragStartY, setDragStartY] = useState<number | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const path = usePathname();
+
   const handleBurgerClick = () => {
     setIsMenuOpen(true);
     setMenuPositionY(0);
@@ -62,9 +65,9 @@ const NavItem: React.FC = () => {
 
   const navItem = [
     { id: 1, name: "Home", href: "/" },
-    { id: 2, name: "Matches & Table", href: "/" },
-    { id: 3, name: "Rules", href: "/" },
-    { id: 4, name: "Stadium", href: "/" },
+    { id: 2, name: "Matches & Table", href: "/matches" },
+    { id: 3, name: "Rules", href: "/rules" },
+    { id: 4, name: "Stadium", href: "/stadium" },
   ];
 
   return (
@@ -72,8 +75,15 @@ const NavItem: React.FC = () => {
       {/* desktop */}
       <ul className={styles.desktop}>
         {navItem.map((item) => (
-          <li key={item.id} className={styles.navItem}>
-            {item.name}
+          <li key={item.id} className={inter.className}>
+            <Link
+              href={item.href}
+              className={`${styles.navItem} ${
+                path === item.href ? styles.active : ""
+              }`}
+            >
+              {item.name}
+            </Link>
           </li>
         ))}
 
@@ -110,7 +120,12 @@ const NavItem: React.FC = () => {
               <ul className={styles.menuList}>
                 {navItem.map((item) => (
                   <li className={inter.className} key={item.id}>
-                    {item.name}
+                    <Link
+                      href={item.href}
+                      className={`${styles.mobLink} ${path === item.href ? styles.active : ""}`}
+                    >
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
                 <OutlineButton
