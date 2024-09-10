@@ -65,7 +65,7 @@ const NavItem: React.FC = () => {
 
   const navItem = [
     { id: 1, name: "Home", href: "/" },
-    { id: 2, name: "Matches & Table", href: "/matches" },
+    { id: 2, name: "Matches & Table", href: "/mach&table" },
     { id: 3, name: "Rules", href: "/rules" },
     { id: 4, name: "Stadium", href: "/stadium" },
   ];
@@ -122,7 +122,9 @@ const NavItem: React.FC = () => {
                   <li className={inter.className} key={item.id}>
                     <Link
                       href={item.href}
-                      className={`${styles.mobLink} ${path === item.href ? styles.active : ""}`}
+                      className={`${styles.mobLink} ${
+                        path === item.href ? styles.active : ""
+                      }`}
                     >
                       {item.name}
                     </Link>

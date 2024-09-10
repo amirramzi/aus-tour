@@ -5,6 +5,7 @@
   width: 100%;
   max-width: 1980px;
   background-color: $bg_dark;
+  min-height: 100vh;
 }
 .wrapper {
   @include centerWrapper();

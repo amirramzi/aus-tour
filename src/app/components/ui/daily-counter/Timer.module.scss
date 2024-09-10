@@ -6,9 +6,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include mobile {
-    width: 296px;
+  @include tab {
+    width: 294px;
     height: 90px;
+  }
+  @include mob {
+    width: 100%;
   }
 }
 

@@ -11,7 +11,7 @@
   padding-top: $radius_s_d;
   padding-bottom: $radius_s_d;
 
-  @include mobile {
+  @include tab {
     padding-top: $radius_s_m;
     padding-bottom: $radius_s_m;
   }
@@ -24,9 +24,13 @@
   position: relative;
   overflow: hidden;
   margin-bottom: -40px;
-  @include mobile {
+  @include tab {
     padding: 16px;
     margin-bottom: 0;
+    width: 328px;
+  }
+  @include mob {
+    width: 100%;
   }
   h2 {
     font-size: 40px;
@@ -50,16 +54,21 @@
   display: flex;
   justify-content: space-between;
   padding-top: 80px;
-  @include mobile {
+  @include tab {
     flex-direction: column;
     padding-top: 40px;
+    align-items: center;
   }
 }
 .img {
   width: 782px;
-  @include mobile {
-    width: auto;
+  @include tab {
+    width: 328px;
     height: 188px;
+  }
+  @include mob {
+    width: 100%;
+    height: auto;
   }
 }
 .overview {
@@ -75,12 +84,15 @@
   align-items: start;
   position: relative;
   overflow: hidden;
-  @include mobile {
+  @include tab {
     height: 291px;
-    width: auto;
+    width: 328px;
     margin-top: 40px;
     height: 291px;
     padding: 16px;
+  }
+  @include mob {
+    width: 100%;
   }
   h3 {
     font-weight: bold;
@@ -96,7 +108,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @include mobile {
+    @include tab {
       height: 128px;
     }
     li {

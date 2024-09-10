@@ -1,0 +1,52 @@
+@import "../../sass/variable";
+@import "../../sass/mixin";
+
+.container {
+  width: 100%;
+  max-width: 1980px;
+  background-color: $bg_dark;
+  min-height: 100vh;
+  position: relative;
+}
+.wrapper {
+  @include centerWrapper();
+  @include mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.child {
+  max-width: 1232px;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include mobile {
+    width: 100%;
+    padding-top: 29px;
+    padding-bottom: 16px;
+  }
+}
+.foot {
+  background-color: $bg_light;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.content {
+  color: $gray_15;
+  div {
+    margin-top: 40px;
+    border: 1px solid $opacity_w_30;
+    border-radius: 100px;
+    background-color: $opacity_w_06;
+    padding: 4px 20px;
+    max-width: 142px;
+    font-size: 14px;
+    line-height: 28px;
+    text-wrap: nowrap;
+    @include mobile {
+      margin-top: 24px;
+    }
+  }
+}

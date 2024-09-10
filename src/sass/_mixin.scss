@@ -5,6 +5,16 @@
     @content;
   }
 }
+@mixin mob {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
 @mixin container {
   width: 100%;
   max-width: 1232px;
