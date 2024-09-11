@@ -30,8 +30,13 @@
   @include mobile {
     flex-wrap: nowrap;
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     justify-content: left;
     order: 2;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 .locCard {

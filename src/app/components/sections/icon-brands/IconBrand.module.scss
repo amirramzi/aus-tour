@@ -1,0 +1,43 @@
+@import "../../../../sass/variable";
+@import "../../../../sass/mixin";
+.bg {
+  width: 100%;
+  background-color: $opacity_b_40;
+  border-bottom: 1px solid $opacity_w_15;
+  overflow: hidden;
+}
+.wrapper {
+  width: 100%;
+  background-color: $opacity_b_40;
+  border-bottom: 1px solid $opacity_w_15;
+  overflow: hidden;
+  background-color: $opacity_b_40;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include tab {
+    padding: 16px 0;
+  }
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+.item {
+  width: 25vw;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mob {
+    width: 120px;
+    height: 35px;
+    margin: 5px 35px;
+    padding: 5px 15px;
+    img {
+      height: 100%;
+    }
+  }
+}

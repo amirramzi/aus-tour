@@ -16,49 +16,46 @@
 .title {
   display: flex;
   justify-content: space-between;
+  row-gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
   &:first-child {
     h3 {
       font-weight: bold;
       font-size: 40px;
       color: $gray_15;
+      padding-bottom: 12px;
     }
     p {
       font-weight: 400;
       size: 16px;
       color: $gray_30;
-      margin-top: 20px;
-      @include mobile {
-        padding-bottom: 40px;
-      }
+
+      line-height: 36px;
     }
   }
-  @include mobile {
+  @include tab {
     flex-direction: column;
+    padding-bottom: 12px;
   }
 }
 .teamWrapper {
-  margin-top: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  @include mobile {
-    flex-direction: column;
-  }
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
+  gap: 40px;
 }
 .teamCard {
-  width: calc(25% - 20px);
-  margin-bottom: 40px;
   display: flex;
   align-items: center;
 
   span {
-    padding-left: 20px;
+    padding-left: 12px;
     font-weight: bold;
     font-size: 16px;
-    line-height: 38px;
+    line-height: 36px;
   }
-  @include mobile {
-    width: auto;
-    margin-bottom: 20px;
-  }
+}
+.select {
+  width: 275px;
 }

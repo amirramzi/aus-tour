@@ -13,10 +13,11 @@ interface SelectProps {
   options: Option[];
   label: string;
   name: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   value: string;
-  onBlur: (e: React.FocusEvent<any>) => void;
+  onBlur?: (e: React.FocusEvent<any>) => void;
   error?: string;
+  size?: "full";
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -27,17 +28,20 @@ const Select: React.FC<SelectProps> = ({
   value,
   onBlur,
   error,
+  size,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(
-    options.find((option) => option.value === value) || null
+    options?.find((option) => option.value === value) || null
   );
   const selectRef = useRef<HTMLDivElement>(null);
 
   const handleOptionClick = (option: Option): void => {
     setSelectedOption(option);
     setIsOpen(false);
-    onChange(option.value);
+    if (onChange) {
+      onChange(option.value);
+    }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -56,8 +60,9 @@ const Select: React.FC<SelectProps> = ({
         name,
       },
     } as React.FocusEvent<any>;
-
-    onBlur(event);
+    if (onBlur) {
+      onBlur(event);
+    }
   };
 
   useEffect(() => {
@@ -73,7 +78,10 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <>
-      <div className={styles.wrapper} ref={selectRef}>
+      <div
+        className={`${styles.wrapper} ${size ? styles.full : ""}`}
+        ref={selectRef}
+      >
         <label htmlFor={name}>{label}</label>
         <div
           className={`${styles.selectBox} ${isOpen ? styles.focus : ""} ${

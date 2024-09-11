@@ -6,11 +6,10 @@ import AustriaMap from "../../icon/AustriaMap";
 import { antonio, inter } from "@/app/fonts";
 
 const Location: React.FC = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(0);
-  const [activeLoc, setActiveLoc] = useState<number | null>(0);
+  const [activeCard, setActiveCard] = useState<number>(0);
+
   const clickHandler = (index: number) => {
     setActiveCard(index);
-    setActiveLoc(index);
   };
 
   const LocCard: { name: string }[] = [
@@ -21,7 +20,7 @@ const Location: React.FC = () => {
     { name: "Sporthalle Baden" },
     { name: "Sporthalle Eferding" },
     { name: "Sporthalle Leonding" },
-    { name: "Fischamend" },
+    { name: "Sporthalle Fischamend" },
     { name: "Sporthalle Rum" },
     { name: "Augustinum Halle Graz" },
     { name: "Sporthalle Hausmannstätten" },
@@ -56,7 +55,11 @@ const Location: React.FC = () => {
         ))}
       </div>
 
-      <AustriaMap className={styles.map} activeLoc={activeLoc} />
+      <AustriaMap
+        className={styles.map}
+        activeCard={activeCard}
+        setActiveCard={setActiveCard}
+      />
     </div>
   );
 };

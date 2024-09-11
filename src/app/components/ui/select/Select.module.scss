@@ -9,7 +9,7 @@
   width: 596px;
   position: relative;
 
-  @include mobile {
+  @include tab {
     width: 100%;
   }
 
@@ -81,4 +81,7 @@
 .errorSelect {
   background-color: $opacity_brand_20 !important;
   border: 1px solid $error;
+}
+.full {
+  width: 100%;
 }

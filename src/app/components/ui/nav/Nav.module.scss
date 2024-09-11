@@ -6,6 +6,7 @@
 .nav {
   @include container();
   z-index: 500;
+  position: relative;
 }
 .container {
   height: 99px;
@@ -14,31 +15,31 @@
   justify-content: space-between;
   border-radius: 40px;
   transition: all 0.2s ease;
-
+  @include tab {
+    height: 40px;
+    align-items: end;
+  }
   &.scrolled {
+    @include container();
     margin-top: 20px;
     position: fixed;
-    top: 0;
-    width: 86.5%;
-    max-width: 1232px;
+
     height: 80px;
     padding: 8px 40px;
     border-radius: 40px;
     background-color: $gray_90;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    @include mobile {
-      width: 93%;
+    @include tab {
+      width: 96%;
       height: 56px;
       padding: 0px 20px;
       margin-top: 20px;
       align-items: center;
     }
-  }
-
-  @include mobile {
-    height: 40px;
-    align-items: end;
+    @include mob {
+      width: 92%;
+    }
   }
 }
 
@@ -69,7 +70,7 @@
     font-weight: 700;
     font-size: 26px;
     text-wrap: nowrap;
-    letter-spacing: -0.03em;
+
     transition: font-size 0.3s ease;
     padding-left: 10px;
     @include mobile {

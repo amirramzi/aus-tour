@@ -4,9 +4,9 @@ import img from "/public/img/final-match.png";
 import Image from "next/image";
 import Calendar from "../../icon/Calendar";
 import Location from "../../icon/Location";
-import DailyCounter from "../../ui/daily-counter/DailyCounter";
 import { antonio, inter } from "@/app/fonts";
 import Timer from "../../ui/daily-counter/Timer";
+
 const Final: React.FC = () => {
   return (
     <div className={styles.wrapper}>
@@ -23,16 +23,17 @@ const Final: React.FC = () => {
             </p>
           </div>
           <div className={styles.date}>
-            <div className={styles.loc}>
-              <div>
+            <div className={styles.dateLoc}>
+              <div className={styles.icon}>
                 <Calendar />
-                <span> January 13, 2024 </span>
-              </div>
-              <div>
                 <Location />
-                <span>Sportzentrum Niederösterreich,</span>
               </div>
-              <div>St. Pölten</div>
+              <ul>
+                <li className={inter.className}> January 13, 2024 </li>
+                <li className={inter.className}>
+                  Sportzentrum Niederösterreich, St. Pölten
+                </li>
+              </ul>
             </div>
             <div className={styles.timer}>
               <Timer />

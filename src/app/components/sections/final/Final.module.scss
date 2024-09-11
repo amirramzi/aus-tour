@@ -90,18 +90,7 @@
     justify-content: space-between;
   }
 }
-.loc {
-  color: $gray_15;
 
-  div {
-    display: flex;
-    align-items: center;
-    padding: 8px 0;
-    &:last-child {
-      margin-left: 35px;
-    }
-  }
-}
 .timer {
   @include mobile {
     width: 100%;
@@ -114,4 +103,28 @@
 }
 .radial2 {
   @include radialFinal2();
+}
+.dateLoc {
+  display: flex;
+  color: $gray_15;
+  width: 272px;
+  @include tab {
+    padding-top: 12px;
+  }
+  .icon {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+    svg {
+      margin-top: 8px;
+    }
+  }
+  ul {
+    list-style: none;
+
+    li {
+      line-height: 36px;
+      font-size: 16px;
+    }
+  }
 }

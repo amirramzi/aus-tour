@@ -9,18 +9,10 @@ import logo5 from "/public/img/team-logo/logo5.png";
 import logo6 from "/public/img/team-logo/logo6.png";
 // import Select from "../../ui/select/Select";
 import { antonio, inter } from "@/app/fonts";
+import Select from "../../ui/select/Select";
 
 const Teams: React.FC = () => {
-  const team = [
-    { img: logo1 },
-    { img: logo2 },
-    { img: logo3 },
-    { img: logo4 },
-    { img: logo5 },
-    { img: logo6 },
-    { img: logo1 },
-    { img: logo2 },
-  ];
+  const team = [logo1, logo2, logo3, logo4, logo5, logo6, logo1, logo2];
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -32,18 +24,31 @@ const Teams: React.FC = () => {
               Austria Tour.
             </p>
           </div>
-          <div>{/* <Select /> */}</div>
+          <div className={styles.select}>
+            <Select
+              size="full"
+              label="stadium"
+              name="stadium"
+              options={[
+                { value: "Sporthalle Viktring Klagenfurt" },
+                { value: "Stadthalle Steyr1" },
+                { value: "Stadthalle Steyr2" },
+                { value: "Stadthalle Steyr3" },
+              ]}
+              value="Sporthalle Viktring Klagenfurt"
+            />
+          </div>
         </div>
         <div className={styles.teamWrapper}>
           {team.map((item, index) => (
             <div key={index} className={styles.teamCard}>
-              <Image src={item.img} alt="team logo" />
+              <Image src={item} alt="team logo" />
               <span className={inter.className}>Team Very Long Name</span>
             </div>
           ))}
           {team.map((item, index) => (
             <div key={index} className={styles.teamCard}>
-              <Image src={item.img} alt="team logo" />
+              <Image src={item} alt="team logo" />
               <span>Team Very Long Name</span>
             </div>
           ))}
