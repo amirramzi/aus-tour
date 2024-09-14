@@ -22,7 +22,7 @@
 
   width: 112px;
   height: 112px;
-  @include mobile {
+  @include tab {
     width: 135px;
     height: 135px;
   }
@@ -48,14 +48,14 @@
   justify-content: center;
   background-color: $opacity_w_15;
   border-radius: 100%;
-  @include mobile {
+  @include tab {
     width: 90px;
     height: 90px;
   }
   svg {
     width: 112px;
     height: 112px;
-    @include mobile {
+    @include tab {
       width: 90px;
       height: 90px;
     }

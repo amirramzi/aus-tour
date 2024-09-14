@@ -10,7 +10,8 @@ import BaseIdCard from "../BaseIdCard";
 import { antonio, inter } from "@/app/fonts";
 import styles from "./Form.module.scss";
 import SubmitButton from "./SubmitButton";
-
+import CheckBox from "@/app/components/ui/check-box/CheckBox";
+import axios from "axios";
 interface FormProps {
   setIsOpenRegistered: (open: boolean) => void;
   setIsOpenDeleteLogo: (open: boolean) => void;
@@ -30,6 +31,7 @@ interface RegisterFormValues {
   teamLogo?: File | null;
   idCard: File | null;
   stadium: string;
+  agreement: false;
 }
 
 const validationSchema = Yup.object({
@@ -55,6 +57,7 @@ const validationSchema = Yup.object({
       return value && value.size <= 3 * 1024 * 1024;
     }),
   stadium: Yup.string().required("Please select a stadium."),
+  agreement: Yup.bool().oneOf([true], "Field must be checked"),
 });
 const Form: React.FC<FormProps> = ({
   setIsOpenRegistered,
@@ -79,19 +82,36 @@ const Form: React.FC<FormProps> = ({
       postalCode: "",
       teamLogo: null,
       idCard: null,
+      agreement: false,
     },
     validationSchema,
-    onSubmit: (
-      values: RegisterFormValues,
-      { setSubmitting }: FormikHelpers<RegisterFormValues>
-    ) => {
+    onSubmit: async (values, { setSubmitting }) => {
       setLoading(true);
-      setTimeout(() => {
-        console.log(values);
-        setLoading(false);
-        setSubmitting(false);
-        setIsOpenRegistered(true);
-      }, 2000);
+      try {
+        const formData = new FormData();
+        Object.entries(values).forEach(([key, value]) => {
+          formData.append(key, value as Blob | string);
+        });
+
+        const result = await axios.post(
+          "http://localhost:3001/api/submit-form",
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
+        if (result.status == 201) {
+          setTimeout(() => {
+            setIsOpenRegistered(true);
+          }, 200);
+          setIsOpenRegistered(true);
+        }
+      } catch (error: any) {
+        console.log(error.response?.data || error.message);
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+          setSubmitting(false);
+        }, 2000);
+      }
     },
   });
 
@@ -296,10 +316,24 @@ const Form: React.FC<FormProps> = ({
           </div>
         </div>
 
-        <p>
-          By submitting, you agree to the AGB and confirm your irrevocable
-          registration.
-        </p>
+        <div className={styles.checkbox}>
+          <CheckBox
+            name="agreement"
+            checked={formik.values.agreement}
+            onChange={formik.handleChange}
+          />
+          <div>
+            <p>
+              By submitting, you agree to the AGB and confirm your irrevocable
+              registration.
+            </p>
+            {formik.touched.agreement && formik.errors.agreement && (
+              <span className={styles.checkError}>
+                {formik.errors.agreement}
+              </span>
+            )}
+          </div>
+        </div>
         <div className={styles.submit}>
           <SubmitButton
             label="Submit"

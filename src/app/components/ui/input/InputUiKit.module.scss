@@ -6,7 +6,7 @@
   color: white;
   width: 596px;
 
-  @include mobile {
+  @include tab {
     width: 100%;
   }
 }

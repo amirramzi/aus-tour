@@ -9,7 +9,7 @@
   padding-bottom: 50px;
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
-  @include mobile {
+  @include tab {
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
   }
@@ -27,7 +27,7 @@
   align-items: center;
   padding-top: 40px;
   gap: 10px;
-  @include mobile {
+  @include tab {
     flex-wrap: nowrap;
     overflow-x: scroll;
     -ms-overflow-style: none;
@@ -68,7 +68,7 @@
   margin-top: 30px;
   width: 791px;
   height: 400px;
-  @include mobile {
+  @include tab {
     width: 328px;
     height: 160px;
   }
@@ -80,7 +80,7 @@
   path:hover {
     stroke: #c71919;
   }
-  @include mobile {
+  @include tab {
     margin-top: 30px;
 
     height: 160px;

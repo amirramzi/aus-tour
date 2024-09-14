@@ -49,7 +49,7 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
-  @include mobile {
+  @include tab {
     justify-content: start;
   }
   &.branS {
@@ -58,7 +58,7 @@
   .img {
     width: 56px;
     transition: width 0.3s ease;
-    @include mobile {
+    @include tab {
       width: 31px;
       height: 28px;
     }
@@ -73,7 +73,7 @@
 
     transition: font-size 0.3s ease;
     padding-left: 10px;
-    @include mobile {
+    @include tab {
       font-size: 16px;
     }
   }

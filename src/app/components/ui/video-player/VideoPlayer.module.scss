@@ -4,7 +4,7 @@
 .wrapper {
   height: 720px;
   position: relative;
-  @include mobile {
+  @include tab {
     height: 560px;
   }
 }

@@ -8,16 +8,6 @@
     font-size: 40px;
     padding-bottom: 40px;
   }
-  p {
-    font-weight: 400;
-    color: $gray_15;
-    font-size: 12px;
-    line-height: 24px;
-    padding-top: 40px;
-    @include md {
-      padding-top: 32px;
-    }
-  }
 }
 
 .teamLogo {
@@ -83,6 +73,29 @@
       flex-direction: column;
       width: 195px;
       height: 180px;
+    }
+  }
+}
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 40px;
+  gap: 4px;
+  @include md {
+    padding-top: 32px;
+  }
+  div {
+    p {
+      font-weight: 400;
+      color: $gray_15;
+      font-size: 12px;
+      line-height: 24px;
+    }
+    .checkError {
+      font-size: 12px;
+      font-weight: 400;
+      color: $error;
+      padding-top: 4px;
     }
   }
 }

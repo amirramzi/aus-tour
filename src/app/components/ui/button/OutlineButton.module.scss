@@ -17,13 +17,13 @@
   align-items: center;
   width: 135px;
   padding: 10 20px;
-  @include mobile {
+  @include tab {
     width: 100%;
     justify-content: center;
     margin-top: 25px;
   }
   span {
-    @include mobile {
+    @include tab {
       padding-right: 10px;
     }
   }

@@ -1,10 +1,5 @@
 @import "./variable";
 
-@mixin mobile {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
 @mixin mob {
   @media (max-width: 480px) {
     @content;
@@ -35,7 +30,7 @@
 }
 @mixin radiusCard {
   border-radius: $radius_c_d;
-  @include mobile {
+  @include tab {
     border-radius: $radius_c_m;
   }
 }
@@ -81,7 +76,7 @@
   position: absolute;
   right: -300px;
   top: -250px;
-  @include mobile {
+  @include tab {
     right: -650px;
     top: -600px;
   }
@@ -94,7 +89,7 @@
   position: absolute;
   left: -250px;
   top: -200px;
-  @include mobile {
+  @include tab {
     left: -250px;
     top: -200px;
   }

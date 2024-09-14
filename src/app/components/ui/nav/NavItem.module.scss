@@ -6,7 +6,10 @@
   list-style: none;
   display: flex;
   align-items: center;
-  @include mobile {
+  @include md {
+    gap: 28px;
+  }
+  @include tab {
     display: none;
   }
 }
@@ -20,14 +23,14 @@
 
 .mobile {
   display: none;
-  @include mobile {
+  @include tab {
     display: block;
   }
 }
 
 .burgerIcon {
   display: none;
-  @include mobile {
+  @include tab {
     display: block;
   }
 }
@@ -47,7 +50,6 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-
   background-color: $gray_75;
   border-top-left-radius: $radius_s_m;
   border-top-right-radius: $radius_s_m;

@@ -13,7 +13,7 @@
   text-align: center;
   letter-spacing: -0.03em;
   color: $gray_15;
-  @include mobile {
+  @include tab {
     font-size: 46px;
     line-height: 51px;
   }
@@ -24,7 +24,7 @@
   line-height: 48px;
   text-align: center;
   color: $gray_15;
-  @include mobile {
+  @include tab {
     font-size: 14px;
     line-height: 28px;
   }

@@ -9,7 +9,7 @@
 }
 .wrapper {
   @include centerWrapper();
-  @include mobile {
+  @include tab {
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -18,7 +18,7 @@
   max-width: 1232px;
   padding-top: 40px;
   padding-bottom: 40px;
-  @include mobile {
+  @include tab {
     width: 100%;
     padding-top: 29px;
     padding-bottom: 16px;

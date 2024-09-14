@@ -9,7 +9,6 @@
   z-index: 999999;
   background-color: $opacity_b_40;
   backdrop-filter: blur(40px);
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -26,7 +25,7 @@
   color: $gray_15;
   text-align: center;
   z-index: 99999999999999;
-  @include mobile {
+  @include tab {
     width: 328px;
   }
   h3 {
@@ -40,7 +39,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 38px;
-    @include mobile {
+    @include tab {
       padding: 16px;
       font-size: 15px;
     }
