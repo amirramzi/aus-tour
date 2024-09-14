@@ -14,7 +14,7 @@
     font-size: 12px;
     line-height: 24px;
     padding-top: 40px;
-    @include mobile {
+    @include md {
       padding-top: 32px;
     }
   }
@@ -22,7 +22,7 @@
 
 .teamLogo {
   padding-bottom: 40px;
-  @include mobile {
+  @include md {
     padding-bottom: 0;
   }
   label {
@@ -44,7 +44,7 @@
   justify-content: space-between;
   gap: 40px;
   padding-bottom: 40px;
-  @include mobile {
+  @include md {
     flex-direction: column;
     width: 100%;
     padding-top: 32px;
@@ -57,7 +57,7 @@
   gap: 40px;
   border-top: 1px solid $opacity_w_15;
   padding-top: 40px;
-  @include mobile {
+  @include md {
     flex-direction: column;
     width: 100%;
     padding-top: 32px;
@@ -65,7 +65,7 @@
 }
 .idCard {
   padding-top: 40px;
-  @include mobile {
+  @include md {
     padding-top: 32px;
   }
   label {
@@ -79,7 +79,7 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    @include mobile {
+    @include md {
       flex-direction: column;
       width: 195px;
       height: 180px;
@@ -88,7 +88,7 @@
 }
 .submit {
   margin-top: 40px;
-  @include mobile {
+  @include md {
     margin-top: 32px;
   }
 }

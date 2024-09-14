@@ -92,7 +92,7 @@
 }
 
 .timer {
-  @include mobile {
+  @include tab {
     width: 100%;
     display: flex;
     justify-content: center;

@@ -15,6 +15,11 @@
     @content;
   }
 }
+@mixin md {
+  @media (max-width: 1124px) {
+    @content;
+  }
+}
 @mixin container {
   width: 100%;
   max-width: 1232px;

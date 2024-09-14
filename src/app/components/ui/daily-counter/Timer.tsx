@@ -4,10 +4,14 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import styles from "./Timer.module.scss";
 import { inter } from "@/app/fonts";
 
+const targetDate = new Date("2025-04-12T05:00:00Z");
+
 const Timer: React.FC = () => {
-  const months = 7;
-  const days = 30;
-  const hours = 10;
+  const now = new Date();
+  const remainingTimeInSeconds = Math.max(
+    Math.floor((targetDate.getTime() - now.getTime()) / 1000),
+    0
+  );
 
   const renderTime = (dimension: string, time: number) => (
     <div className={styles.timer}>
@@ -23,8 +27,8 @@ const Timer: React.FC = () => {
       <div className={styles.timerSvgWrapper}>
         <CountdownCircleTimer
           isPlaying
-          duration={months * 30 * 24 * 60 * 60}
-          initialRemainingTime={months * 30 * 24 * 60 * 60}
+          duration={7 * 30 * 24 * 60 * 60} // 7 months in seconds
+          initialRemainingTime={remainingTimeInSeconds}
           colors="#f8f8f8"
           strokeWidth={3}
           trailColor="#ffffff26"
@@ -33,7 +37,7 @@ const Timer: React.FC = () => {
             renderTime(
               "Months",
               Math.ceil(
-                (months * 30 * 24 * 60 * 60 - elapsedTime) / (30 * 24 * 60 * 60)
+                (7 * 30 * 24 * 60 * 60 - elapsedTime) / (30 * 24 * 60 * 60)
               )
             )
           }
@@ -43,8 +47,8 @@ const Timer: React.FC = () => {
       <div className={styles.timerSvgWrapper}>
         <CountdownCircleTimer
           isPlaying
-          duration={days * 24 * 60 * 60}
-          initialRemainingTime={days * 24 * 60 * 60}
+          duration={30 * 24 * 60 * 60} // 30 days in seconds
+          initialRemainingTime={remainingTimeInSeconds % (30 * 24 * 60 * 60)}
           colors="#f8f8f8"
           strokeWidth={3}
           trailColor="#ffffff26"
@@ -52,7 +56,7 @@ const Timer: React.FC = () => {
           {({ elapsedTime }) =>
             renderTime(
               "Days",
-              Math.ceil((days * 24 * 60 * 60 - elapsedTime) / (24 * 60 * 60))
+              Math.ceil((30 * 24 * 60 * 60 - elapsedTime) / (24 * 60 * 60))
             )
           }
         </CountdownCircleTimer>
@@ -61,8 +65,8 @@ const Timer: React.FC = () => {
       <div className={styles.timerSvgWrapper}>
         <CountdownCircleTimer
           isPlaying
-          duration={hours * 60 * 60}
-          initialRemainingTime={hours * 60 * 60}
+          duration={24 * 60 * 60} // 10 hours in seconds
+          initialRemainingTime={remainingTimeInSeconds % (24 * 60 * 60)}
           colors="#f8f8f8"
           strokeWidth={3}
           trailColor="#ffffff26"
@@ -70,7 +74,7 @@ const Timer: React.FC = () => {
           {({ elapsedTime }) =>
             renderTime(
               "Hours",
-              Math.ceil((hours * 60 * 60 - elapsedTime) / (60 * 60))
+              Math.ceil((24 * 60 * 60 - elapsedTime) / (60 * 60))
             )
           }
         </CountdownCircleTimer>

@@ -24,6 +24,7 @@
   position: relative;
   overflow: hidden;
   margin-bottom: -40px;
+
   @include tab {
     padding: 16px;
     margin-bottom: 0;
@@ -59,10 +60,16 @@
     flex-direction: column;
     align-items: center;
     padding-top: 16px;
+    gap: 16px;
   }
 }
 .img {
   width: 782px;
+  @include md {
+    width: 682px;
+    border-radius: 40px;
+    overflow: hidden;
+  }
   @include tab {
     width: 328px;
     height: 188px;

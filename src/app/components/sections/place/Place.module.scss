@@ -65,6 +65,10 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  @include md {
+    width: 352px;
+    padding: 24px;
+  }
   @include tab {
     width: 328px;
     height: 273px;
@@ -89,6 +93,12 @@
   h5 {
     font-weight: bold;
     font-size: 40px;
+    @include md {
+      font-size: 32px;
+    }
+    @include tab {
+      font-size: 40px;
+    }
   }
 
   p {
@@ -96,10 +106,19 @@
     text-align: center;
     line-height: 38px;
     font-weight: 400;
+    @include md {
+      font-size: 12px;
+    }
+    @include tab {
+      font-size: 16px;
+    }
   }
   &:nth-child(2) {
     width: 388px;
     height: 410px;
+    @include md {
+      width: 356px;
+    }
     @include tab {
       order: 1 !important;
       height: 330px;

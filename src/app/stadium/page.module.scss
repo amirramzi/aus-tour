@@ -9,7 +9,7 @@
     padding-bottom: 40px;
     font-size: 16px;
     line-height: 38px;
-    @include mobile {
+    @include tab {
       padding-bottom: 16px;
     }
   }
@@ -18,7 +18,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  @include mobile {
+
+  @include md {
     flex-direction: column;
   }
 }
