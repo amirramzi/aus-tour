@@ -69,6 +69,7 @@
     width: 682px;
     border-radius: 40px;
     overflow: hidden;
+    object-fit: cover;
   }
   @include tab {
     width: 328px;
@@ -117,8 +118,12 @@
       height: 128px;
     }
     li {
+      height: 38px;
       display: flex;
       align-items: center;
+      span {
+        padding-left: 6px;
+      }
     }
   }
   .radial2 {

@@ -39,11 +39,12 @@
 .cardWrapper {
   @include container();
   width: 100%;
-
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
   align-items: flex-end;
-
+  @include md {
+    gap: 16px;
+  }
   @include tab {
     flex-direction: column;
     justify-content: space-between;

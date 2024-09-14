@@ -4,7 +4,6 @@ import React from "react";
 const Time = () => {
   return (
     <svg
-      style={{ marginRight: "10px" }}
       width="24"
       height="24"
       viewBox="0 0 24 24"

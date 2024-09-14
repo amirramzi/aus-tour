@@ -8,6 +8,7 @@ import Location from "../../icon/Location";
 import Time from "../../icon/Time";
 import Euro from "../../icon/Euro";
 import { antonio, inter } from "@/app/fonts";
+
 const About: React.FC = () => {
   return (
     <div className={styles.cont}>
@@ -30,18 +31,20 @@ const About: React.FC = () => {
             <h3 className={antonio.className}>Tournament Overview</h3>
             <ul className={inter.className}>
               <li>
-                <Ball /> Classic indoor football with boards
+                <Ball />
+                <span> Classic indoor football with boards</span>
               </li>
               <li>
-                <Location /> 16 locations
+                <Location />
+                <span> 16 locations</span>
               </li>
               <li>
                 <Time />
-                Morning & afternoon groups
+                <span> Morning & afternoon groups</span>
               </li>
               <li>
                 <Euro />
-                €130
+                <span> €130</span>
               </li>
             </ul>
             <ButtonRegister />

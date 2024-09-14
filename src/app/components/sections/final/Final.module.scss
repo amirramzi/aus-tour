@@ -51,11 +51,13 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  @include md {
+    padding: 16px;
+  }
   @include tab {
     width: 328px;
     height: 390px;
     border-radius: $radius_c_m;
-    padding: 16px;
   }
   @include mob {
     width: 100%;
@@ -66,15 +68,19 @@
   h2 {
     font-weight: bold;
     font-size: 72px;
-
+    padding-bottom: 16px;
+    @include md {
+      padding-bottom: 8px;
+    }
     @include tab {
       text-wrap: nowrap;
       font-size: 42px;
+      padding-bottom: 16px;
     }
   }
   p {
     font-size: 16px;
-    margin-top: 20px;
+
     @include tab {
       line-height: 32px;
     }
@@ -83,8 +89,11 @@
 .date {
   display: flex;
   justify-content: space-between;
-
+  @include md {
+    flex-wrap: wrap;
+  }
   @include tab {
+    flex-wrap: nowrap;
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;

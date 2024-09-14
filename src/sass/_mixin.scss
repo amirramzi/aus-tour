@@ -23,9 +23,9 @@
 @mixin container {
   width: 100%;
   max-width: 1232px;
-  @include mobile {
-    padding-left: 16px;
-    padding-right: 16px;
+  @include md {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
 @mixin centerWrapper {
