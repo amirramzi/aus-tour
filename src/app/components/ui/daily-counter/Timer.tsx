@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import styles from "./Timer.module.scss";
 import { inter } from "@/app/fonts";
@@ -7,11 +7,22 @@ import { inter } from "@/app/fonts";
 const targetDate = new Date("2025-04-12T05:00:00Z");
 
 const Timer: React.FC = () => {
-  const now = new Date();
-  const remainingTimeInSeconds = Math.max(
-    Math.floor((targetDate.getTime() - now.getTime()) / 1000),
-    0
-  );
+  const [remainingTimeInSeconds, setRemainingTimeInSeconds] = useState<
+    number | null
+  >(null);
+
+  useEffect(() => {
+    const now = new Date();
+    const remainingTime = Math.max(
+      Math.floor((targetDate.getTime() - now.getTime()) / 1000),
+      0
+    );
+    setRemainingTimeInSeconds(remainingTime);
+  }, []);
+
+  if (remainingTimeInSeconds === null) {
+    return null;
+  }
 
   const renderTime = (dimension: string, time: number) => (
     <div className={styles.timer}>
@@ -65,7 +76,7 @@ const Timer: React.FC = () => {
       <div className={styles.timerSvgWrapper}>
         <CountdownCircleTimer
           isPlaying
-          duration={24 * 60 * 60} // 10 hours in seconds
+          duration={24 * 60 * 60} // 24 hours in seconds
           initialRemainingTime={remainingTimeInSeconds % (24 * 60 * 60)}
           colors="#f8f8f8"
           strokeWidth={3}
