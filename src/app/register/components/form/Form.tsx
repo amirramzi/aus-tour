@@ -175,9 +175,9 @@ const Form: React.FC<FormProps> = ({
               onBlur={formik.handleBlur}
               options={[
                 { value: "Sporthalle Viktring Klagenfurt" },
-                { value: "Stadthalle Steyr" },
-                { value: "Stadthalle Steyr" },
-                { value: "Stadthalle Steyr" },
+                { value: "Stadthalle Steyr1" },
+                { value: "Stadthalle Steyr2" },
+                { value: "Stadthalle Steyr3" },
               ]}
               error={
                 formik.touched.stadium && formik.errors.stadium
